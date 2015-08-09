@@ -72,6 +72,12 @@ In order to see your site in action, run Hugo's built-in local server.
 
 Now enter `localhost:1313` in the address bar of your browser.
 
+Contributing
+------------
+
+Report any bugs using the [issue tracker][issue_tracker]. Submit your own bug
+fixes or feature additions via a [pull request][pull_request].
+
 License
 -------
 
@@ -82,5 +88,7 @@ This theme is released under the MIT License. For more information read the
 [setup_guide]: http://gohugo.io/overview/installing/
 [exampleSite]: https://github.com/rcsenkbeil/grid-side/tree/master/exampleSite
 [config.toml]: https://github.com/rcsenkbeil/grid-side/blob/master/exampleSite/config.toml
+[issue_tracker]: https://github.com/rcsenkbeil/grid-side/issues
+[pull_request]: https://github.com/rcsenkbeil/grid-side/pulls
 [license]: https://github.com/rcsenkbeil/grid-side/blob/master/LICENSE
 
