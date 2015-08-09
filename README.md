@@ -2,13 +2,15 @@ GridSide Theme
 ==============
 
 The GridSide theme is a multi-page portfolio and blog utilizing the
-[Materialize][materialize] frontend framework.
+[Materialize][materialize] frontend framework. Medium-style comments may be
+added to blog entries using [SideComments.js][sidecomments.js].
 
 The theme contains a main page with a single grid of images representing
 different sections of the website. Sections can be marked as blog, project,
 contact, or miscellaneous in order to provide slight changes in styling.
 
 Current Materialize version is `0.97.0`.
+Current SideComments.js version is `0.0.3`.
 
 Contents
 --------
@@ -87,6 +89,7 @@ This theme is released under the MIT License. For more information read the
 [license][license].
 
 [materialize]: http://www.materializecss.com/
+[sidecomments.js]: https://github.com/aroc/side-comments
 [setup_guide]: http://gohugo.io/overview/installing/
 [exampleSite]: https://github.com/rcsenkbeil/grid-side/tree/master/exampleSite
 [config.toml]: https://github.com/rcsenkbeil/grid-side/blob/master/exampleSite/config.toml
