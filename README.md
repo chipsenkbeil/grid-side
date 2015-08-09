@@ -15,7 +15,7 @@ Contents
 - [Getting Started](#getting-started)
     - [The Config File](#the-config-file) 
     - [Adding a Blog Section](#adding-a-blog-section)
-        - [Optional - Adding Medium-style Comments with Hull.io](#)
+        - [Optional - Adding Medium-style Comments with Hull.io](#optional---adding-medium-style-comments-with-hullio)
     - [Adding a Project Section](#adding-a-project-section)
     - [Adding a Contact Section](#adding-a-contact-section)
     - [Adding a Miscellaneous Section](#adding-a-miscellaneous-section)
