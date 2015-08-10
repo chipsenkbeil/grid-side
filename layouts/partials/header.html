@@ -1,0 +1,19 @@
+<header>
+    {{ with .image }}
+        <div class="parallax-container" style="height: 100vh;">
+            <div class="parallax">
+                <img src="{{ . }}"></img>
+            </div>
+        </div>
+    {{ else }}
+        <div class="col s12" style="
+            {{ if .color }}
+                background-color: {{ .color }};
+            {{ else }}
+                background-color: #009688;
+            {{ end }}
+            height: 100vh;
+        "></div>
+    {{ end }}
+</header>
+

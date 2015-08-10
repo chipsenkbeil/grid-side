@@ -1,0 +1,18 @@
+<a href="{{ .link }}">
+    <div class="cell col 
+        s{{ with .Size.small }}{{ . }}{{ else }}12{{ end }}
+        m{{ with .Size.medium }}{{ . }}{{ else }}6{{ end }}
+        l{{ with .Size.large }}{{ . }}{{ else }}4{{ end }}
+    " style="padding: 0px;">
+        {{ with .image }}
+            <img src="{{ . }}" class="responsive-img"></img>
+        {{ else }}
+            <div style="background-color: {{ .color }}; height: auto;"></div>
+        {{ end }}
+        <div class="highlight-block valign-wrapper">
+            <span class="flow-text">{{ .name }}</span>
+        </div>
+        <!-- min-height: {{ with .minheight }}{{ . }}{{ else }}300px{{ end }}; -->
+    </div>
+</a>
+

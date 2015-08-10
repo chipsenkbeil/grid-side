@@ -8,6 +8,6 @@ features = ["blog", "portfolio"]
 min_version = 0.13
 
 [author]
-  name = "Chip Senkbeil"
-  homepage = "http://www.senkbeil.org"
+    name = "Chip Senkbeil"
+    homepage = "http://www.senkbeil.org"
 

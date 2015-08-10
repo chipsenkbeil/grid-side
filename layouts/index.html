@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+{{ partial "head.html" . }}
+
+<body>
+    <div class="row" style="margin-bottom: 0px;">
+        {{ with .Site.Params.Header }}
+            {{ partial "header.html" . }}
+        {{ end }}
+
+        {{ range .Site.Params.Cells.List }}
+            {{ partial "cell.html" . }}
+        {{ end }}
+    </div>
+
+    {{ partial "js.html" . }}
+</body>
+
+</html>
+
