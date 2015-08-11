@@ -20,7 +20,10 @@
             33vh
         {{ end }};
     ">
+        {{ if or (not .always_show_text) (eq .always_show_text false) }}
         <div class="highlight-block">
+        {{ end }}
+
             <!-- NOTE: Must use positioning instead of vertical-align due   -->
             <!--       to float property on col of row.                     -->
             <span class="center-align white-text" style="
@@ -29,9 +32,12 @@
                 width: 100%;
                 height: 100%;
             ">
-                <!-- TODO: Determine how to center without Javascript. -->
                 <h3 class="js-vertical-align">{{ .name }}</h3>
             </span>
+
+        {{ if eq .always_show_text true }}
+        <div class="highlight-block">
+        {{ end }}
         </div>
     </div>
 </a>
