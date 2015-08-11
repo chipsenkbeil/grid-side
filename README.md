@@ -25,6 +25,7 @@ Contents
     - [Adding a Contact Section](#adding-a-contact-section)
     - [Adding a Miscellaneous Section](#adding-a-miscellaneous-section)
     - [Nearly Finished](#nearly-finished)
+- [Notes](#notes)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -77,6 +78,22 @@ In order to see your site in action, run Hugo's built-in local server.
 
 Now enter `localhost:1313` in the address bar of your browser.
 
+Notes
+-----
+
+Currently there are two features that require Javascript: parallax scrolling
+and centering text within the grid.
+
+Parallax is provided by the Materialize library.
+
+Centering text is a hack that will hopefully be removed in the future, but
+is needed to center text within a floating element. The culprit is the
+Materialize column adding a `float: left`, causing flexbox alignments to
+be ignored. See [here][centering_problem] for more information.
+
+Potential grid replacement would be [Flexbox Grid][flexbox_grid], which
+should allow proper vertical centering.
+
 Contributing
 ------------
 
@@ -97,4 +114,6 @@ This theme is released under the MIT License. For more information read the
 [issue_tracker]: https://github.com/rcsenkbeil/grid-side/issues
 [pull_request]: https://github.com/rcsenkbeil/grid-side/pulls
 [license]: https://github.com/rcsenkbeil/grid-side/blob/master/LICENSE
+[centering_problem]: https://github.com/Dogfalo/materialize/issues/1241
+[flexbox_grid]: http://flexboxgrid.com
 
