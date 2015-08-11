@@ -20,24 +20,12 @@
             33vh
         {{ end }};
     ">
-        {{ if or (not .always_show_text) (eq .always_show_text false) }}
-        <div class="highlight-block">
-        {{ end }}
-
-            <!-- NOTE: Must use positioning instead of vertical-align due   -->
-            <!--       to float property on col of row.                     -->
-            <span class="center-align white-text" style="
-                display: inline-block;
-                position: relative;
-                width: 100%;
-                height: 100%;
-            ">
-                <h3 class="js-vertical-align">{{ .name }}</h3>
-            </span>
-
         {{ if eq .always_show_text true }}
-        <div class="highlight-block">
+            {{ partial "cell-text.html" . }}
         {{ end }}
+
+        <div class="highlight-block">
+            {{ partial "cell-text.html" . }}
         </div>
     </div>
 </a>
