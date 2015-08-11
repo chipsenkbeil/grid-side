@@ -9,8 +9,35 @@
             {{ partial "header.html" . }}
         {{ end }}
 
+        {{ with .Site.Params.About }}
+            <div class="col s12 blue-grey darken-2 white-text center-align">
+                <h2>
+                    <ul class="horizontal no-bullets" style="margin: 0 auto;">
+                        <li><i class="large material-icons">{{ .icon }}</i></li>
+                        <li>About Me</li>
+                    </ul>
+                </h2>
+            </div>
+        {{ end }}
+
         {{ range .Site.Params.Cells.List }}
             {{ partial "cell.html" . }}
+        {{ end }}
+
+        {{ with .Site.Params.Footer }}
+            <div class="col s12 blue-grey darken-2 white-text right-align">
+                <ul class="horizontal no-bullets">
+                    {{ range .List }}
+                        <li>
+                            <a href="{{ .icon_link }}" class="white-text">
+                                <i class="fa fa-{{ .icon_class }} fa-2x"></i>
+                            </a>
+                        </li>
+                        <li><span style="font-size: 2em;">|</span></li>
+                    {{ end }}
+                    <li><span style="font-size: 2em;">Copyright &#169; by {{ .name }}</span></li>
+                </ul>
+            </div>
         {{ end }}
     </div>
 

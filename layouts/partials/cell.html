@@ -3,16 +3,28 @@
         s{{ with .Size.small }}{{ . }}{{ else }}12{{ end }}
         m{{ with .Size.medium }}{{ . }}{{ else }}6{{ end }}
         l{{ with .Size.large }}{{ . }}{{ else }}4{{ end }}
-    " style="padding: 0px;">
+    " style="
+        padding: 0px;
+
         {{ with .image }}
-            <img src="{{ . }}" class="responsive-img"></img>
+            background-image: url({{ . }});
+            background-size: cover;
+            background-repeat: no-repeat;
         {{ else }}
-            <div style="background-color: {{ .color }}; height: auto;"></div>
+            background-color: {{ .color }};
         {{ end }}
+
+        height: {{ with .Site.Params.Cells.height }}
+            {{ . }}
+        {{ else }}
+            33vh
+        {{ end }};
+    ">
         <div class="highlight-block valign-wrapper">
-            <span class="flow-text">{{ .name }}</span>
+            <span class="valign center-align white-text">
+                <h3>{{ .name }}</h3>
+            </span>
         </div>
-        <!-- min-height: {{ with .minheight }}{{ . }}{{ else }}300px{{ end }}; -->
     </div>
 </a>
 

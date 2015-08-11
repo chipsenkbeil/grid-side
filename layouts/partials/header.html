@@ -1,19 +1,21 @@
 <header>
-    {{ with .image }}
-        <div class="parallax-container" style="height: 100vh;">
-            <div class="parallax">
-                <img src="{{ . }}"></img>
-            </div>
-        </div>
-    {{ else }}
-        <div class="col s12" style="
-            {{ if .color }}
-                background-color: {{ .color }};
+    <div class="parallax-container" style="height: 100vh;">
+        <div class="parallax">
+            {{ if .image }}
+                <img src="{{ .image }}" style="z-index: -1;"></img>
+                {{ partial "header-logo.html" . }}
             {{ else }}
-                background-color: #009688;
+                <div style="
+                    position: relative;
+                    display: block;
+                    background-color: {{ .color }};
+                    height: 100%;
+                    z-index: -1;
+                ">
+                    {{ partial "header-logo.html" . }}
+                </div>
             {{ end }}
-            height: 100vh;
-        "></div>
-    {{ end }}
+        </div>
+    </div>
 </header>
 
