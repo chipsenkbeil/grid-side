@@ -20,9 +20,17 @@
             33vh
         {{ end }};
     ">
-        <div class="highlight-block valign-wrapper">
-            <span class="valign center-align white-text">
-                <h3>{{ .name }}</h3>
+        <div class="highlight-block">
+            <!-- NOTE: Must use positioning instead of vertical-align due   -->
+            <!--       to float property on col of row.                     -->
+            <span class="center-align white-text" style="
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+            ">
+                <!-- TODO: Determine how to center without Javascript. -->
+                <h3 class="js-vertical-align">{{ .name }}</h3>
             </span>
         </div>
     </div>

@@ -4,7 +4,7 @@ languageCode = "en-us"
 title = "GridSide"
 theme = "grid-side"
 
-[params]
+[Params]
 
     #
     # Provide your name, description, and email that you want to include on
@@ -20,7 +20,7 @@ theme = "grid-side"
     # not be included. Not providing an image will use a color. Marking as
     # disabled results in this cell not appearing in the site.
     #
-    [params.header]
+    [Params.Header]
 
         name = "Your name"
         description = "Your description"
@@ -29,8 +29,21 @@ theme = "grid-side"
         #color = "#FFF"
         #enabled = false
 
+    [Params.About]
+
+        icon = "face"
+
+    [Params.Footer]
+
+        name = "Chip Senkbeil"
+
+        [[Params.Footer.List]]
+
+            icon_class = "github"
+            icon_link = "http://www.github.com/rcsenkbeil"
+
     #
-    # Contains the cells representing the sections of your website. Each cell
+    # Contains the Cells representing the sections of your website. Each cell
     # contains the name of the cell, a brief description, and a link to the
     # associated section. 
     #
@@ -44,12 +57,12 @@ theme = "grid-side"
     # screens, 1/2 (6 out of 12) for medium screens, and 1 (12 out of 12) for
     # small screens. To change the cell's size per screen, use the properties
     # 'cell_large', 'cell_medium', and 'cell_small' respectively with a number
-    # ranging from 1 to 12. Make sure that cells have nubmers equalling 12
+    # ranging from 1 to 12. Make sure that Cells have nubmers equalling 12
     # per row.
     #
-    [params.cells]
+    [Params.Cells]
 
-        [[params.cells.list]]
+        [[Params.Cells.List]]
 
             name = "Blog"
             description = "Your personal blog"
@@ -60,7 +73,29 @@ theme = "grid-side"
             #cell_medium = 6
             #cell_small = 12
 
-        [[params.cells.list]]
+        [[Params.Cells.List]]
+
+            name = "Super Mega Awesometastic Feature of the Week"
+            description = ""
+            link = ""
+            image = ""
+            #color = "#FFF"
+            #cell_large = 4
+            #cell_medium = 6
+            #cell_small = 12
+
+        [[Params.Cells.List]]
+
+            name = "Something on only two lines"
+            description = ""
+            link = ""
+            image = ""
+            #color = "#FFF"
+            #cell_large = 4
+            #cell_medium = 6
+            #cell_small = 12
+
+        [[Params.Cells.List]]
 
             name = ""
             description = ""
@@ -71,7 +106,7 @@ theme = "grid-side"
             #cell_medium = 6
             #cell_small = 12
 
-        [[params.cells.list]]
+        [[Params.Cells.List]]
 
             name = ""
             description = ""
@@ -82,29 +117,7 @@ theme = "grid-side"
             #cell_medium = 6
             #cell_small = 12
 
-        [[params.cells.list]]
-
-            name = ""
-            description = ""
-            link = ""
-            image = ""
-            #color = "#FFF"
-            #cell_large = 4
-            #cell_medium = 6
-            #cell_small = 12
-
-        [[params.cells.list]]
-
-            name = ""
-            description = ""
-            link = ""
-            image = ""
-            #color = "#FFF"
-            #cell_large = 4
-            #cell_medium = 6
-            #cell_small = 12
-
-        [[params.cells.list]]
+        [[Params.Cells.List]]
 
             name = ""
             description = ""

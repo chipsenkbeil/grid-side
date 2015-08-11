@@ -2,7 +2,14 @@
 <script src="{{ .Site.BaseURL }}js/materialize.min.js"></script>
 <script>
     $(document).ready(function(){
-      $('.parallax').parallax();
+        $(".parallax").parallax();
+
+        $(".js-vertical-align")
+            .css("position", "relative")
+            .css("marginTop", function() {
+                return -$(this).height() / 2;
+            })
+            .css("top", "50%");
     });
 </script>
 
