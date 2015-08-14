@@ -25,6 +25,7 @@ Contents
     - [Adding a Contact Section](#adding-a-contact-section)
     - [Adding a Miscellaneous Section](#adding-a-miscellaneous-section)
     - [Nearly Finished](#nearly-finished)
+- [TODO](#todo)
 - [Notes](#notes)
 - [Contributing](#contributing)
 - [License](#license)
@@ -77,6 +78,17 @@ In order to see your site in action, run Hugo's built-in local server.
     $ hugo server -w
 
 Now enter `localhost:1313` in the address bar of your browser.
+
+TODO
+----
+
+1. Add blog post single page
+2. Add blog post list page
+3. Add project single page (or pages?)
+4. Add project list page
+5. Add 404.html page
+6. Add favicon
+7. Refactor manual stylings with CSS classes
 
 Notes
 -----
