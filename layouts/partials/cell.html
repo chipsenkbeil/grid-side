@@ -14,7 +14,7 @@
             background-color: {{ .color }};
         {{ end }}
 
-        height: {{ with .Site.Params.Cells.height }}
+        height: {{ with .height }}
             {{ . }}
         {{ else }}
             33vh
