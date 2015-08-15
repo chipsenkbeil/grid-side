@@ -82,13 +82,7 @@ Now enter `localhost:1313` in the address bar of your browser.
 TODO
 ----
 
-1. Add blog post single page
-2. Add blog post list page
-3. Add project single page (or pages?)
-4. Add project list page
-5. Add 404.html page
-6. Add favicon
-7. Refactor manual stylings with CSS classes
+See [TODO][todo] for more information.
 
 Notes
 -----
@@ -128,4 +122,5 @@ This theme is released under the MIT License. For more information read the
 [license]: https://github.com/rcsenkbeil/grid-side/blob/master/LICENSE
 [centering_problem]: https://github.com/Dogfalo/materialize/issues/1241
 [flexbox_grid]: http://flexboxgrid.com
+[todo]: https://github.com/rcsenkbeil/grid-side/blob/master/TODO
 
