@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{ partial "html-start.html" . }}
 
 {{ partial "head.html" . }}
 
@@ -44,5 +43,5 @@
     {{ partial "js.html" . }}
 </body>
 
-</html>
+{{ partial "html-end.html" . }}
 
