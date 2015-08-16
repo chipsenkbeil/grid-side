@@ -40,17 +40,9 @@
         <div class="col s3"></div>
         <div class="col s3"></div>
         <div class="col s6 force-horizontal-center">
-            <form method="get" id="search" action="http://duckduckgo.com/" class="js-vertical-align">
-                <input type="hidden" name="sites"value="{{ .Site.BaseURL }}"/>
-                <input type="hidden" name="ka" value="h"/>
-                <input type="hidden" name="k7" value="#fafafa"/>
-                <input type="hidden" name="kj" value="#3f3f3f"/>
-                <input type="hidden" name="ky" value="#fafafa"/>
-                <input type="hidden" name="kx" value="b"/>
-                <input type="hidden" name="kt" value="Helvetica"/>
-                <input type="text" name="q" maxlength="255" placeholder="Search"/>
-                <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-            </form>
+            <div class="js-vertical-align">
+                {{ partial "search.html" . }}
+            </div>
         </div>
         <div class="col s3"></div>
         <div class="col s4"></div>
