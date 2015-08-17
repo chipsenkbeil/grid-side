@@ -1,0 +1,22 @@
+{{ partial "html-start.html" . }}
+
+{{ partial "head.html" . }}
+
+<body>
+    <article>
+        <header>
+            <h2>{{ .Title }}</h2>
+        </header>
+
+        <section>
+            {{ .Content }}
+        </section>
+
+        <footer>
+            {{ .Date.Format "Mon Jan 2, 2006" }}
+        </footer>
+    </article>
+</body>
+
+{{ partial "html-end.html" . }}
+
