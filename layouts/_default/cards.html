@@ -1,7 +1,7 @@
 {{ partial "html-start.html" . }}
 {{ partial "head.html" . }}
 
-<body>
+<body class="blue-grey darken-2">
     <style>
         ul.no-list-float li {
             float: none;
@@ -28,14 +28,7 @@
         }
 
         .pagination li a {
-            color: #000000;
-        }
-
-        .col-padding {
-            padding: 35px 50px;
-        }
-        .ignore-col-padding {
-            padding: -35px -50px;
+            color: #FFFFFF;
         }
     </style>
     <nav class="blue-grey darken-2 white-text center-align" style="position: fixed; width: 70px; height: 100%; top: 0; left: 0;">
@@ -48,40 +41,19 @@
 
     <section style="padding-left: 70px; width: 100%;">
         <div class="row">
-            {{ $pages := .Paginator.Pages }}
-            <!-- "col s12 m6 l4 white black-text" -->
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 0 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
+        {{ range .Paginator.Pages }}
+            <div class="col s12 m6 l4">
+                <div class="card blue-grey darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ .Title }}</span>
+                        <p>{{ .Summary }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ .Permalink }}">Read More</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 1 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 2 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
+        {{ end }}
         </div>
         <ul class="pagination">
             {{ with .Paginator }}

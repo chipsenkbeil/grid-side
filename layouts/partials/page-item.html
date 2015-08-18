@@ -1,0 +1,24 @@
+<div style="border: 1px solid rgba(0, 0, 0, 0.05);">
+    {{ with .Params.image }}
+        <img src="{{ . }}" style="width: 100%; height: auto;"></img>
+    {{ end }}
+    <div style="padding: 35px 50px;">
+        <header>
+            <time class="grey-text text-lighten-1">{{ .Date.Format "Mon Jan 06, 2006" }}</time>
+            <h2 class="black-text">{{ .Title }}</h2>
+        </header>
+        <p class="grey-text text-darken-1">{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="btn">Read More</a>
+        <footer>
+            <ul>
+                <li class="grey-text text-lighten-1">
+                    <i class="fa fa-tag"></i>
+                    {{ range .Params.tags }}
+                        <a href="/tags/{{ . | urlize }}" class="grey-text text-lighten-1">{{ . }}</a>
+                    {{ end }}
+                </li>
+            </ul>
+        </footer>
+    </div>
+</div>
+
