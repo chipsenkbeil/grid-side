@@ -37,6 +37,46 @@
         .ignore-col-padding {
             padding: -35px -50px;
         }
+        .custom-column-container {
+            -moz-column-count: 3;
+            -webkit-column-count: 3;
+            column-count: 3;
+
+            -moz-column-gap: 0;
+            -webkit-column-gap: 0;
+            column-gap: 0;
+
+            width: 100%;
+        }
+        .custom-flex-container {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .custom-flex-item {
+            display: inline-block;
+            -webkit-column-break-inside: avoid; /* Chrome, Safari */
+            -moz-column-break-inside:avoid;
+            -o-column-break-inside:avoid;
+            -ms-column-break-inside:avoid;
+            column-break-inside:avoid;
+            page-break-inside: avoid;           /* Theoretically FF 20+ */
+            break-inside: avoid-column;         /* IE 11 */
+        }
+        .custom-flex-item:nth-child(3n+1) {
+            order: 1;
+        }
+        .custom-flex-item:nth-child(3n+2) {
+            order: 2;
+        }
+        .custom-flex-item:nth-child(3n) {
+            order: 3;
+        }
+        .custom-flex-item:nth-last-child(-n+3) {
+            page-break-after: always;
+            -webkit-column-break-after: always;
+            -moz-break-after: always;
+            break-after: always;
+        }
     </style>
     <nav class="blue-grey darken-2 white-text center-align" style="position: fixed; width: 70px; height: 100%; top: 0; left: 0;">
         <ul class="no-list-float" style="list-style: none; padding: 0px; text-indent: 0px;">
@@ -47,41 +87,15 @@
     </nav>
 
     <section style="padding-left: 70px; width: 100%;">
-        <div class="row">
-            {{ $pages := .Paginator.Pages }}
-            <!-- "col s12 m6 l4 white black-text" -->
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 0 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
+        {{ $pages := .Paginator.Pages }}
+        <div class="custom-flex-container white black-text">
+        <div class="custom-column-container">
+            {{ range $pages }}
+                <div class="custom-flex-item">
+                    {{ partial "page-item.html" . }}
                 </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 1 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-4 white black-text"
-                 style="padding: 0px;">
-                <div class="box">
-                    {{ range (seq 0 (sub (len $pages) 1)) }}
-                        {{ if eq (mod . 3) 2 }}
-                            {{ partial "page-item.html" (index $pages .) }}
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
+            {{ end }}
+        </div>
         </div>
         <ul class="pagination">
             {{ with .Paginator }}
