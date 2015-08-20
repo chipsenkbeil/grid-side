@@ -13,6 +13,9 @@ contact, or miscellaneous in order to provide slight changes in styling.
 - Current Flexbox Grid version is `6.2.0`.
 - Current Font Awesome version is `4.4.0`.
 - Current SideComments.js version is `0.0.3`.
+- Current Masonry.js version is `3.3.1`.
+- Current imagesLoaded.js version is `3.1.8`.
+- Current Modernizr.js version is `2.8.3`.
 
 Contents
 --------
