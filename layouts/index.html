@@ -3,21 +3,19 @@
 {{ partial "head.html" . }}
 
 <body class="blue-grey darken-2">
-    <div class="row force-materialize-row" style="margin-bottom: 0px;">
+    <div class="row" style="margin-bottom: 0px;">
         {{ with .Site.Params.Header }}
             {{ partial "header-scrolling.html" . }}
         {{ end }}
 
-        {{ with .Site.Params.About }}
-            <div class="col s12 blue-grey darken-2 white-text center-align">
-                <h2>
-                    <ul class="horizontal no-bullets" style="margin: 0 auto;">
-                        <li><i class="large material-icons">{{ .icon }}</i></li>
-                        <li>About Me</li>
-                    </ul>
-                </h2>
-            </div>
-        {{ end }}
+        <div class="col s12 blue-grey darken-2 white-text center-align">
+            <h2>
+                <ul class="horizontal no-bullets" style="margin: 0 auto;">
+                    <li>{{ partial "svg-face.html" . }}</li>
+                    <li>About Me</li>
+                </ul>
+            </h2>
+        </div>
 
         {{ range .Site.Params.Cells.List }}
             {{ partial "cell.html" . }}
