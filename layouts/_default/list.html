@@ -73,7 +73,11 @@
         <ul class="no-list-float" style="list-style: none; padding: 0px; text-indent: 0px;">
             <li><a href="{{ .Site.BaseURL }}"><i class="fa fa-home fa-2x"></i></a></li>
             <li><a href="#"><i class="fa fa-search fa-2x"></i></a></li>
-            <li><a href="#"><i class="fa fa-rss fa-2x"></i></a></li>
+            <li>
+                <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank">
+                    <i class="fa fa-rss fa-2x"></i>
+                </a>
+            </li>
         </ul>
     </nav>
 
