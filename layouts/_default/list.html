@@ -69,34 +69,10 @@
             }
         }
 
-        /*
-    .mdT:focus .lightbox {
-        display: block;
-    }
-
-    .lightbox {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        display: none;
-        background-color: black;
-        opacity: 0.8;
-    }
-
-    .lightbox:hover {
-        display: block;
-    }
-
-<button class="mdT" >
-    <div class="lightbox">
-        <form>
-            <input type="text"></input>
-        </form>
-    </div>
-</button>
-        */
+        .large-form input[type=text] {
+            font-size: 5rem;
+            height: 7rem;
+        }
 
         .no-js .materialboxed {
             /* TODO */
@@ -105,7 +81,9 @@
     <nav class="blue-grey darken-2 white-text center-align" style="position: fixed; width: 70px; height: 100%; top: 0; left: 0;">
         <ul class="no-list-float" style="list-style: none; padding: 0px; text-indent: 0px;">
             <li><a href="{{ .Site.BaseURL }}"><i class="fa fa-home fa-2x"></i></a></li>
-            <li><a href="#"><i class="fa fa-search fa-2x"></i></a></li>
+            <li><a href="#" data-lightbox-id="menubox"><i class="fa fa-bars fa-2x"></i></a></li>
+            <li><a href="#" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
+            <li class="blue-grey-text" style="border-top: 1px solid;"><!-- Separator --></li>
             <li>
                 <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank">
                     <i class="fa fa-rss fa-2x"></i>
@@ -113,6 +91,31 @@
             </li>
         </ul>
     </nav>
+
+    <div id="menubox" style="display: none;">
+        <div style="display: flex; flex-flow: row wrap; width: 100%; height: 100%;">
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+            <i class="fa fa-home fa-5x white-text"></i>
+        </div>
+    </div>
+    <div id="searchbox" style="display: none;">
+        <div class="valign-wrapper" style="width: 100%; height: 100%;">
+            <div class="valign large-form" style="margin: 0 auto;">
+                {{ partial "search.html" . }}
+            </div>
+        </div>
+    </div>
 
     <section style="padding-left: 70px; width: 100%;">
         {{ $pages := .Paginator.Pages }}
@@ -153,6 +156,51 @@
                 itemSelector: ".flex-item",
                 columnWidth: ".flex-item",
                 percentPosition: true
+            });
+        });
+
+        // Attach our lightbox handlers
+        $("[data-lightbox-id]").each(function() {
+            var element = $(this);
+            var lightboxId = element.data("lightbox-id");
+            var lightbox = $("#" + lightboxId);
+
+            var lightboxProperties = {
+                "padding": "70px", 
+                "width": "100%", 
+                "height": "100%",
+                "background-color": "black",
+                "color": "white",
+                "opacity": "0.95",
+                "position": "fixed",
+                "top": "0px",
+                "left": "0px",
+                "z-index": "999"
+            };
+            lightbox.css(lightboxProperties);
+            lightbox.hide();
+
+            var lightboxCloseButtonProperties = {
+                "position": "absolute",
+                "top": "0px",
+                "left": "0px",
+                "z-index": "999",
+                "cursor": "pointer"
+            };
+
+            var lightboxCloseButton = $("<i/>", {
+                "class": "fa fa-close fa-5x",
+                "click": function(e) {
+                    e.preventDefault();
+                    lightbox.hide("fast");
+                }
+            });
+            lightboxCloseButton.css(lightboxCloseButtonProperties);
+            lightboxCloseButton.appendTo(lightbox);
+
+            element.click(function(e) {
+                e.preventDefault();
+                lightbox.show("fast");
             });
         });
     </script>
