@@ -10,7 +10,6 @@ different sections of the website. Sections can be marked as blog, project,
 contact, or miscellaneous in order to provide slight changes in styling.
 
 - Current Materialize version is `0.97.0`.
-- Current Flexbox Grid version is `6.2.0`.
 - Current Font Awesome version is `4.4.0`.
 - Current SideComments.js version is `0.0.3`.
 - Current Masonry.js version is `3.3.1`.
