@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/materialize.min.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
+{{ with .Site.Params.Highlight }}
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/styles/{{ .style }}.css">
+{{ end }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
 

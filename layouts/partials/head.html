@@ -1,18 +1,18 @@
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="{{ with .Site.Params.name }}{{ . }}{{ end }}">
-        <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
-        {{ if .RSSlink }}
-          <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-          <link href="{{ .RSSlink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-        {{ end }}
-        {{ .Hugo.Generator }}
-        <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-        <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
-        <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
-        {{ partial "css.html" . }}
-        <script src="{{ .Site.BaseURL }}js/modernizr-latest.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ with .Site.Params.name }}{{ . }}{{ end }}">
+    <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
+    {{ if .RSSlink }}
+      <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSlink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    {{ .Hugo.Generator }}
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
+    <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
+    {{ partial "css.html" . }}
+    <script src="{{ .Site.BaseURL }}js/modernizr-latest.js"></script>
+</head>
 

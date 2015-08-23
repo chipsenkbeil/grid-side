@@ -15,6 +15,7 @@ contact, or miscellaneous in order to provide slight changes in styling.
 - Current Masonry.js version is `3.3.1`.
 - Current imagesLoaded.js version is `3.1.8`.
 - Current Modernizr.js version is `2.8.3`.
+- Current Highlight.js version is `8.7` and contains all 130 languages.
 
 Contents
 --------

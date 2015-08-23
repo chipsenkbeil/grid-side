@@ -62,5 +62,10 @@ $(document).ready(function(){
             lightbox.show("fast");
         });
     });
+
+    // Provide syntax highlighting if highlight.js included
+    if (typeof hljs !== "undefined") {
+        hljs.initHighlightingOnLoad();
+    }
 });
 
