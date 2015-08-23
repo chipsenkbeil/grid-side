@@ -1,15 +1,6 @@
 <script src="{{ .Site.BaseURL }}js/jquery-2.1.4.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/materialize.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".parallax").parallax();
-
-        $(".js-vertical-align")
-            .css("position", "relative")
-            .css("marginTop", function() {
-                return -$(this).height() / 2;
-            })
-            .css("top", "50%");
-    });
-</script>
+<script src="{{ .Site.BaseURL }}js/imagesloaded.pkgd.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/masonry.pkgd.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/main.js"></script>
 
