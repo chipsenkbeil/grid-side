@@ -53,12 +53,6 @@ ul.menu ul {
     transition: all .4s ease;
 }
 
-ul.menu ul li:hover > ul {
-    top:0%;
-    left:100%;
-    opacity:1;
-    visibility:visible;
-}
 ul.menu li:hover > ul {
     opacity: 1;
     top: 0%;
