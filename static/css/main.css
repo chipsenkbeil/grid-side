@@ -82,6 +82,11 @@ ul.menu li {
     width: 100%;
 }
 
+.main-content article {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 .fill-container {
     width: 100%;
     height: 100%;
@@ -121,6 +126,31 @@ ul.menu li {
 .clearfix {
     zoom: 1;
 } /* IE < 8 */
+
+/* ========================================================================= */
+/* = SPACING                                                                 */
+/* ========================================================================= */
+
+/* Materialize small */
+@media only screen and (max-width: 600px) {
+    .center-space {
+        padding: 0%;
+    }
+}
+
+/* Materialize medium */
+@media only screen and (min-width: 601px) {
+    .center-space {
+        padding: 0% 5%;
+    }
+}
+
+/* Materialize large */
+@media only screen and (min-width: 993px) {
+    .center-space {
+        padding: 0% 10%;
+    }
+}
 
 /* ========================================================================= */
 /* = HIGHLIGHT BLOCK                                                         */
@@ -171,6 +201,10 @@ ul.no-list-float li {
 
 .ignore-col-padding {
     padding: -35px -50px;
+}
+
+.no-padding {
+    padding: 0px;
 }
 
 /* ========================================================================= */
