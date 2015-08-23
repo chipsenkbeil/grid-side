@@ -2,30 +2,32 @@
 
 {{ partial "head.html" . }}
 
-<body>
+<body class="page-colors">
     {{ partial "main-menu.html" . }}
 
     <div class="main-content">
-        {{ with .Params.image }}
-            <img src="{{ . }}" style="width: 100%; height: auto;"></img>
-        {{ end }}
-
         <div class="center-space">
-            <article>
-                <header>
-                    <h2>{{ .Title }}</h2>
-                </header>
+            <div class="article-colors">
+                {{ with .Params.image }}
+                    <img src="{{ . }}" class="fill-container-width"></img>
+                {{ end }}
+                <article>
+                    <header>
+                        <h2 class="article-title">{{ .Title }}</h2>
+                        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                    </header>
 
-                <hr>
+                    <hr>
 
-                <section>
-                    {{ .Content }}
-                </section>
+                    <section>
+                        {{ .Content }}
+                    </section>
 
-                <footer>
-                    {{ .Date.Format "Mon Jan 2, 2006" }}
-                </footer>
-            </article>
+                    <footer class="right-align">
+                        <p><small>{{ .Site.Copyright | markdownify }}</small></p>
+                    </footer>
+                </article>
+            </div>
         </div>
     </div>
 

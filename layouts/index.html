@@ -2,15 +2,15 @@
 
 {{ partial "head.html" . }}
 
-<body class="blue-grey darken-2">
+<body class="page-colors">
     <div class="row" style="margin-bottom: 0px;">
         {{ with .Site.Params.Header }}
             {{ partial "header-scrolling.html" . }}
         {{ end }}
 
-        <div class="col s12 blue-grey darken-2 white-text center-align">
+        <div class="col s12 row-colors center-align">
             <h2>
-                <ul class="horizontal no-bullets" style="margin: 0 auto;">
+                <ul class="horizontal no-bullets no-margin">
                     <li>{{ partial "svg-face.html" . }}</li>
                     <li>About Me</li>
                 </ul>
@@ -22,17 +22,17 @@
         {{ end }}
 
         {{ with .Site.Params.Footer }}
-            <div class="col s12 blue-grey darken-2 white-text right-align">
-                <ul class="horizontal no-bullets">
+            <div class="col s12 row-colors right-align">
+                <ul class="main-page-footer horizontal no-bullets">
                     {{ range .List }}
                         <li>
-                            <a href="{{ .icon_link }}" class="white-text">
-                                <i class="fa fa-{{ .icon_class }} fa-2x"></i>
+                            <a href="{{ .icon_link }}">
+                                <i class="fa fa-{{ .icon_class }}"></i>
                             </a>
                         </li>
-                        <li><span style="font-size: 2em;">|</span></li>
+                        <li>|</li>
                     {{ end }}
-                    <li><span style="font-size: 2em;">Copyright &#169; by {{ .name }}</span></li>
+                    <li>{{ $.Site.Copyright | markdownify }}</li>
                 </ul>
             </div>
         {{ end }}

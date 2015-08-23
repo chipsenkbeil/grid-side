@@ -37,7 +37,7 @@ ul.menu {
 
 span.drop-right {
     display: block;
-    box-shadow:inset 2px 0px 0px #FF9;
+    box-shadow:inset 2px 0px 0px #90a4ae;
     position: absolute;
     left: 0px;
     width:100%;
@@ -77,12 +77,28 @@ ul.menu li {
 /* = MISC                                                                    */
 /* ========================================================================= */
 
+.row-colors {
+    background-color: #455A64;
+    color: #FFFFFF;
+}
+
+.page-colors {
+    background-color: #90a4ae;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.article-colors {
+    background-color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.87);
+}
+
 .main-content {
     padding-left: 70px;
     width: 100%;
 }
 
 .main-content article {
+    height: 100%;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -90,6 +106,11 @@ ul.menu li {
 .fill-container {
     width: 100%;
     height: 100%;
+}
+
+.fill-container-width {
+    width: 100%;
+    height: auto;
 }
 
 .no-display {
@@ -126,6 +147,18 @@ ul.menu li {
 .clearfix {
     zoom: 1;
 } /* IE < 8 */
+
+.no-padding: {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.article-title {
+    margin-top: 0px;
+}
 
 /* ========================================================================= */
 /* = SPACING                                                                 */
@@ -176,6 +209,15 @@ ul.menu li {
 /* ========================================================================= */
 /* = LISTS                                                                   */
 /* ========================================================================= */
+
+ul.main-page-footer li {
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+ul.main-page-footer li a {
+    color: #FFFFFF;
+}
 
 ul.no-list-float li {
     float: none;
