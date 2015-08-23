@@ -1,5 +1,79 @@
 
 /* ========================================================================= */
+/* = NAVBAR MENU                                                             */
+/* ========================================================================= */
+
+/* Represents the main menu that is fixed to the left side of the page. */
+/* Has a high z-index such that children can appear outside of its width. */
+.main-menu {
+    position: fixed;
+    width: 70px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    text-align: center;
+}
+
+/* Represents the standard foreground/background colors of a menu. */
+.menu-colors {
+    background-color: #455A64;
+    color: #FFFFFF;
+}
+
+ul.menu {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-indent: 0px;
+    white-space: nowrap;
+}
+
+span.drop-right {
+    display: block;
+    box-shadow:inset 2px 0px 0px #FF9;
+    position: absolute;
+    left: 0px;
+    width:100%;
+    height: 100%;
+    top: 0px;
+}
+
+ul.menu li.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+ul.menu ul {
+    opacity:0;
+    position: absolute;
+    top: 0%;
+    left: 160%;
+    visibility: hidden;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+ul.menu ul li:hover > ul {
+    top:0%;
+    left:100%;
+    opacity:1;
+    visibility:visible;
+}
+ul.menu li:hover > ul {
+    opacity: 1;
+    top: 0%;
+    left: 100%;
+    visibility: visible;
+}
+
+ul.menu li {
+    float: left;
+  
+    /* Needed */
+    position: relative;
+}
+
+/* ========================================================================= */
 /* = MISC                                                                    */
 /* ========================================================================= */
 
@@ -13,6 +87,22 @@
     position: relative;
     border: 1px solid #FFF;
 }
+
+.clearfix:before,
+.clearfix:after {
+    content: ".";    
+    display: block;    
+    height: 0;    
+    overflow: hidden; 
+}
+
+.clearfix:after { 
+    clear: both; 
+}
+
+.clearfix {
+    zoom: 1;
+} /* IE < 8 */
 
 /* ========================================================================= */
 /* = HIGHLIGHT BLOCK                                                         */
