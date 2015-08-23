@@ -1,0 +1,9 @@
+<ul class="tags">
+    <li>
+        <i class="fa fa-tag"></i>
+    </li>
+    {{ range .Params.tags }}
+        <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+    {{ end }}
+</ul>
+

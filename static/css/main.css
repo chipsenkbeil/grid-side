@@ -160,6 +160,19 @@ ul.menu li {
     margin-top: 0px;
 }
 
+ul.tags {
+    list-style: none;
+}
+
+ul.tags li {
+    display: inline;
+    color: #BDBDBD;
+}
+
+ul.tags li a {
+    color: #BDBDBD;
+}
+
 /* ========================================================================= */
 /* = SPACING                                                                 */
 /* ========================================================================= */

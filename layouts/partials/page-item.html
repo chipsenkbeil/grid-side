@@ -10,14 +10,7 @@
         <p class="grey-text text-darken-1">{{ .Summary }}</p>
         <a href="{{ .Permalink }}" class="btn">Read More</a>
         <footer>
-            <ul>
-                <li class="grey-text text-lighten-1">
-                    <i class="fa fa-tag"></i>
-                    {{ range .Params.tags }}
-                        <a href="/tags/{{ . | urlize }}" class="grey-text text-lighten-1">{{ . }}</a>
-                    {{ end }}
-                </li>
-            </ul>
+            {{ partial "tags.html" . }}
         </footer>
     </div>
 </div>
