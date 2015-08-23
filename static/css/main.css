@@ -6,6 +6,7 @@
 /* Represents the main menu that is fixed to the left side of the page. */
 /* Has a high z-index such that children can appear outside of its width. */
 .main-menu {
+    display: block;
     position: fixed;
     width: 70px;
     height: 100%;
@@ -15,6 +16,10 @@
     text-align: center;
 }
 
+.menu-vertical-scroll {
+    overflow-y: scroll;
+}
+
 /* Represents the standard foreground/background colors of a menu. */
 .menu-colors {
     background-color: #455A64;
@@ -22,6 +27,7 @@
 }
 
 ul.menu {
+    display: block;
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -70,6 +76,24 @@ ul.menu li {
 /* ========================================================================= */
 /* = MISC                                                                    */
 /* ========================================================================= */
+
+.main-content {
+    padding-left: 70px;
+    width: 100%;
+}
+
+.fill-container {
+    width: 100%;
+    height: 100%;
+}
+
+.no-display {
+    display: none;
+}
+
+.horizontal-center-hack {
+    margin: 0 auto;
+}
 
 .face {
     fill: #FFFFFF;

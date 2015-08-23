@@ -2,88 +2,19 @@
 {{ partial "head.html" . }}
 
 <body>
-    <nav class="main-menu menu-colors">
-        <ul class="menu menu-colors no-list-float">
-            <li><a href="{{ .Site.BaseURL }}"><i class="fa fa-home fa-2x"></i></a></li>
-            <li>
-                <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+    {{ partial "main-menu.html" . }}
 
-                <!-- NOTE: Only support two levels of menus at the moment! -->
-                <ul class="menu menu-colors no-list-float">
-                    {{ $currentNode := . }}
-                    {{ range .Site.Menus.main }}
-                        <li {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="active"{{ end }}>
-                        {{ if .HasChildren }}
-                            <a href="javascript:;" class="">
-                                {{ .Pre }}
-                                <span>{{ .Name }}</span>
-                                <span class="drop-right"></span>
-                                <!-- <i class="fa fa-caret-right"></i> -->
-                            </a>
-                            <ul class="menu menu-colors no-list-float">
-                                {{ range .Children }}
-                                    <li {{ if $currentNode.IsMenuCurrent "main" . }} class="active" {{ end }}>
-                                        <a href="{{ .URL }}">{{ .Name }}</a>
-                                    </li>
-                                {{ end }}
-                            </ul>
-                        {{ else }}
-                            <a class="" href="{{ .URL }}">
-                                {{ .Pre }}
-                                <span>{{ .Name }}</span>
-                            </a>
-                        {{ end }}
-                        </li>
-                    {{ end }}
-                </ul>
-            </li>
-            <li><a href="#" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
-            <li class="blue-grey-text" style="border-top: 1px solid;"><!-- Separator --></li>
-            <li>
-                <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank">
-                    <i class="fa fa-rss fa-2x"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    {{ partial "search-lightbox.html" . }}
 
-    <div id="searchbox" style="display: none;">
-        <div class="valign-wrapper" style="width: 100%; height: 100%;">
-            <div class="valign large-form" style="margin: 0 auto;">
-                {{ partial "search.html" . }}
-            </div>
-        </div>
-    </div>
-
-    <section style="padding-left: 70px; width: 100%;">
-        {{ $pages := .Paginator.Pages }}
-        <div class="flex-container white black-text">
-            {{ range $pages }}
+    <section class="main-content">
+        <div class="flex-container">
+            {{ range .Paginator.Pages }}
                 <div class="flex-item">
                     {{ partial "page-item.html" . }}
                 </div>
             {{ end }}
         </div>
-        <ul class="pagination">
-            {{ with .Paginator }}
-            <li class="{{ if .HasPrev }}waves-effect{{ else }}disabled{{ end }}">
-                <a href="{{ if .HasPrev }}{{ .Prev.URL }}{{ else }}#!{{ end }}">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-            </li>
-            {{ $currentPageNumber := .PageNumber }}
-            {{ range .Pagers }}
-                <li class="{{ if eq $currentPageNumber .PageNumber }}active{{ else }}waves-effect{{ end }}">
-                    <a href="{{ .URL }}">{{ .PageNumber }}</a>
-                </li>
-            {{ end }}
-            <li class="{{ if .HasNext }}waves-effect{{ else }}disabled{{ end }}">
-                <a href="{{ if .HasNext }}{{ .Next.URL }}{{ else }}#!{{ end }}">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
+        {{ partial "pagination.html" . }}
     </section>
 
     {{ partial "js.html" . }}
