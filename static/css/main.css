@@ -174,6 +174,78 @@ ul.tags li a {
 }
 
 /* ========================================================================= */
+/* = PARALLAX                                                                */
+/* ========================================================================= */
+
+/* Modified from keithclark.co.uk/articles/pure-css-parallax-websites/ */
+.parallax {
+    -moz-perspective: 300px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    /* Fix for webkit browsers */
+    -moz-perspective-origin-x: 100%;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
+}
+
+.parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    /* Fix for webkit browsers */
+    -moz-transform-origin-x: 100%;
+    -webkit-transform-origin-x: 100%;
+    transform-origin-x: 100%;
+}
+
+.parallax__layer--fore {
+    -moz-transform: translateZ(90px) scale(.7);
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+
+.parallax__layer--base {
+    -moz-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax__layer--back {
+    -moz-transform: translateZ(-300px) scale(2);
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+
+.parallax__layer--deep {
+    -moz-transform: translateZ(-600px) scale(3);
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+
+/* ========================================================================= */
 /* = SPACING                                                                 */
 /* ========================================================================= */
 

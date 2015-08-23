@@ -1,21 +1,14 @@
-<header>
-    <div class="parallax-container" style="height: 100vh;">
-        <div class="parallax">
-            {{ if .image }}
-                <img src="{{ .image }}" style="z-index: -1;"></img>
-                {{ partial "header-logo.html" . }}
-            {{ else }}
-                <div style="
-                    position: relative;
-                    display: block;
-                    background-color: {{ .color }};
-                    height: 100%;
-                    z-index: -1;
-                ">
-                    {{ partial "header-logo.html" . }}
-                </div>
-            {{ end }}
-        </div>
+<!-- NOTE: Must be at root level for firefox to work (cannot wrap in header) -->
+<div class="parallax__group">
+    <div class="parallax__layer parallax__layer--base">
+        {{ partial "header-logo.html" . }}
     </div>
-</header>
+    <div class="parallax__layer parallax__layer--back"
+        {{ if .image }}
+            style="background-image: url('{{ .image }}'); background-size: cover; background-repeat: no-repeat;"
+        {{ else }}
+            style="background-color: {{ .color }}"
+        {{ end }}
+    ></div>
+</div>
 

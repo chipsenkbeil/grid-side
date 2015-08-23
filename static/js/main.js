@@ -1,7 +1,4 @@
 $(document).ready(function(){
-    // Enable parallax scrolling
-    $(".parallax").parallax();
-
     // Align vertical text within floats
     $(".js-vertical-align")
         .css("position", "relative")
