@@ -173,6 +173,12 @@ ul.tags li a {
     color: #BDBDBD;
 }
 
+.fullsize-background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
 /* ========================================================================= */
 /* = PARALLAX                                                                */
 /* ========================================================================= */

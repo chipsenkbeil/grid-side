@@ -3,9 +3,9 @@
     <div class="parallax__layer parallax__layer--base">
         {{ partial "header-logo.html" . }}
     </div>
-    <div class="parallax__layer parallax__layer--back"
+    <div class="parallax__layer parallax__layer--back {{ if .image }}fullsize-background-image{{ end }}"
         {{ if .image }}
-            style="background-image: url('{{ .image }}'); background-size: cover; background-repeat: no-repeat;"
+            style="background-image: url('{{ .image }}'); {{ with .image_position }}background-position: {{ . }};{{ end }}"
         {{ else }}
             style="background-color: {{ .color }}"
         {{ end }}

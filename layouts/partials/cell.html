@@ -3,16 +3,17 @@
         s{{ with .Size.small }}{{ . }}{{ else }}12{{ end }}
         m{{ with .Size.medium }}{{ . }}{{ else }}6{{ end }}
         l{{ with .Size.large }}{{ . }}{{ else }}4{{ end }}
+        no-padding
+        {{ if .image }}fullsize-background-image{{ end }}
     " style="
-        padding: 0px;
-
         {{ with .image }}
             background-image: url({{ . }});
-            background-size: cover;
-            background-repeat: no-repeat;
         {{ else }}
             background-color: {{ .color }};
         {{ end }}
+
+        {{ with .image_position }}
+`   
 
         height: {{ with .height }}
             {{ . }}
