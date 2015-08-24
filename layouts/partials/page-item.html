@@ -8,8 +8,8 @@
             <h2 class="black-text">{{ .Title }}</h2>
         </header>
         <p class="grey-text text-darken-1">{{ .Summary }}</p>
-        <a href="{{ .Permalink }}" class="btn">
-            {{ if .Params.redirect }}Go to site{{ else }}Read More{{ end }}
+        <a href="{{ .Permalink }}" class="btn {{ if .Params.redirect }}red{{ end }}">
+            {{ if .Params.redirect }}Redirect{{ else }}Read More{{ end }}
         </a>
         <footer>
             {{ partial "tags.html" . }}
