@@ -382,8 +382,10 @@ ul.pagination {
 /* ========================================================================= */
 
 .flex-container {
+    display: -webkit-flex;
     display: flex;
     width: 100%;
+    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
 }
 

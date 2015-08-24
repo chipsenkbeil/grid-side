@@ -12,7 +12,12 @@ $(document).ready(function(){
         $container.masonry({
             itemSelector: ".flex-item",
             columnWidth: ".flex-item",
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: 0 /* Disable animation of transitions */
+        });
+
+        $(window).resize(function() {
+            $container.masonry();
         });
     });
 

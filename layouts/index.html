@@ -10,36 +10,36 @@
 
         <div class="parallax__group">
             <div class="parallax__layer parallax__layer--base">
-                <div class="row" style="margin-bottom: 0px;">
-                    <div class="col s12 row-colors center-align">
-                        <h2>
-                            <ul class="horizontal no-bullets no-margin">
-                                <li>{{ partial "svg-face.html" . }}</li>
-                                <li>About Me</li>
-                            </ul>
-                        </h2>
-                    </div>
+                <div class="row-colors center-align">
+                    <h2 class="no-margin">
+                        <ul class="horizontal no-bullets no-margin">
+                            <li>{{ partial "svg-face.html" . }}</li>
+                            <li>About Me</li>
+                        </ul>
+                    </h2>
+                </div>
 
+                <div class="flex-container">
                     {{ range .Site.Params.Cells.List }}
                         {{ partial "cell.html" . }}
                     {{ end }}
-
-                    {{ with .Site.Params.Footer }}
-                        <div class="col s12 row-colors right-align">
-                            <ul class="main-page-footer horizontal no-bullets">
-                                {{ range .List }}
-                                    <li>
-                                        <a href="{{ .icon_link }}">
-                                            <i class="fa fa-{{ .icon_class }}"></i>
-                                        </a>
-                                    </li>
-                                    <li>|</li>
-                                {{ end }}
-                                <li>{{ $.Site.Copyright | markdownify }}</li>
-                            </ul>
-                        </div>
-                    {{ end }}
                 </div>
+
+                {{ with .Site.Params.Footer }}
+                    <div class="row-colors right-align">
+                        <ul class="main-page-footer horizontal no-bullets no-margin">
+                            {{ range .List }}
+                                <li>
+                                    <a href="{{ .icon_link }}">
+                                        <i class="fa fa-{{ .icon_class }}"></i>
+                                    </a>
+                                </li>
+                                <li>|</li>
+                            {{ end }}
+                            <li>{{ $.Site.Copyright | markdownify }}</li>
+                        </ul>
+                    </div>
+                {{ end }}
             </div>
         </div>
     </div>

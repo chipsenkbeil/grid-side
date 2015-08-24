@@ -1,8 +1,6 @@
-<a href="{{ .link }}">
-    <div class="cell col 
-        s{{ with .Size.small }}{{ . }}{{ else }}12{{ end }}
-        m{{ with .Size.medium }}{{ . }}{{ else }}6{{ end }}
-        l{{ with .Size.large }}{{ . }}{{ else }}4{{ end }}
+<a href="{{ .link }}" class="flex-item">
+    <div class="cell
+        fill-container
         no-padding
         {{ if .image }}fullsize-background-image{{ end }}
     " style="
@@ -13,12 +11,13 @@
         {{ end }}
 
         {{ with .image_position }}
-`   
+            background-position: {{ . }};
+        {{ end }}
 
         height: {{ with .height }}
             {{ . }}
         {{ else }}
-            33vh
+            33.33vh
         {{ end }};
     ">
         {{ if eq .always_show_text true }}
