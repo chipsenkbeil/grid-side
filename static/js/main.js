@@ -1,12 +1,4 @@
 $(document).ready(function(){
-    // Align vertical text within floats
-    $(".js-vertical-align")
-        .css("position", "relative")
-        .css("marginTop", function() {
-            return -$(this).height() / 2;
-        })
-        .css("top", "50%");
-
     // Employ Masonry layout configuration
     var $container = $(".flex-container").imagesLoaded(function() {
         $container.masonry({

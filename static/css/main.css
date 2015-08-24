@@ -281,13 +281,25 @@ ul.tags li a {
 /* ========================================================================= */
 
 .highlight-block {
-    display: block;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    text-align: center;
+    
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100%;
-    text-align: center;
-    color: #FFF;
+    color: #FFFFFF;
     background-color: rgba(240, 95, 64, 0.5);
     opacity: 0.0;
     transition: all 0.35s;
@@ -382,11 +394,18 @@ ul.pagination {
 /* ========================================================================= */
 
 .flex-container {
+    display: -ms-flex;
     display: -webkit-flex;
     display: flex;
     width: 100%;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .flex-item {
