@@ -14,5 +14,15 @@
     <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     {{ partial "css.html" . }}
     <script src="{{ .Site.BaseURL }}js/modernizr-latest.js"></script>
+
+    {{ with .Params.redirect }}
+        <!-- Attempt redirect through refresh -->
+        <meta http-equiv="refresh" content="1; url={{ . }}">
+ 
+        <script>
+            // Meta-refresh failed, so attempt Javascript
+            window.location.href = "{{ . }}"
+        </script> 
+    {{ end }}
 </head>
 

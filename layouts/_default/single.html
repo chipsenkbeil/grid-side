@@ -20,7 +20,11 @@
                     <hr>
 
                     <section>
-                        {{ .Content }}
+                        {{ with .Params.redirect }}
+                            <p>If you are not redirected automatically, follow the <a href="{{ . }}">link</a>.</p>
+                        {{ else }}
+                            {{ .Content }}
+                        {{ end }}
                     </section>
 
                     <footer class="right-align">
