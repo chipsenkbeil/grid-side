@@ -132,6 +132,21 @@ ul.menu li {
     border: 1px solid #FFF;
 }
 
+.grayscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.grayscale:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
 .clearfix:before,
 .clearfix:after {
     content: ".";    
