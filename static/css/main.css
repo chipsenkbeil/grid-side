@@ -77,6 +77,19 @@ ul.menu li {
 /* = MISC                                                                    */
 /* ========================================================================= */
 
+html {
+    height: 100vh;
+}
+
+.minimum-viewport-height {
+    min-height: 100vh;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
 .row-colors {
     background-color: #455A64;
     color: #FFFFFF;
@@ -92,15 +105,28 @@ ul.menu li {
     color: rgba(0, 0, 0, 0.87);
 }
 
+.article-shadow {
+    -moz-box-shadow: 0 0 20px #5c5c5c;
+    -webkit-box-shadow: 0 0 20px #5c5c5c;
+    box-shadow: 0 0 20px #5c5c5c;
+}
+
 .main-content {
+    display: block;
+    position: relative;
     padding-left: 70px;
     width: 100%;
+    min-height: 100%;
 }
 
 .main-content article {
-    height: 100%;
+    min-height: 100vh;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.main-content article header {
+    padding-top: 30px;
 }
 
 .fill-container {
@@ -365,6 +391,44 @@ ul.no-list-float li {
 
 .no-padding {
     padding: 0px;
+}
+
+.columns {
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+
+    line-height: 1.5;
+}
+
+/* Materialize small */
+@media only screen and (max-width: 600px) {
+    .columns-responsive {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        columns: 1;
+    }
+}
+
+/* Materialize medium */
+@media only screen and (min-width: 601px) {
+    .columns-responsive {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        columns: 2;
+    }
+}
+
+/* Materialize large */
+@media only screen and (min-width: 993px) {
+    .columns-responsive {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+        columns: 3;
+    }
 }
 
 /* ========================================================================= */
