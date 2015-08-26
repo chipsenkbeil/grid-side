@@ -5,7 +5,7 @@
     {{ partial "main-menu.html" . }}
 
     <section class="main-content">
-        <div class="flex-container">
+        <div class="masonry-flex-container">
             {{ range .Paginator.Pages }}
                 <div class="flex-item">
                     {{ partial "page-item.html" . }}

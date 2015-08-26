@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // Employ Masonry layout configuration
-    var $container = $(".flex-container").imagesLoaded(function() {
+    var $container = $(".masonry-flex-container").imagesLoaded(function() {
         $container.masonry({
             itemSelector: ".flex-item",
             columnWidth: ".flex-item",

@@ -120,6 +120,7 @@ html, body {
 }
 
 .main-content article {
+    position: relative;
     min-height: 100vh;
     padding-left: 30px;
     padding-right: 30px;
@@ -472,6 +473,7 @@ ul.pagination {
 /* = PAGE SUMMARY                                                            */
 /* ========================================================================= */
 
+.masonry-flex-container,
 .flex-container {
     display: -ms-flex;
     display: -webkit-flex;
