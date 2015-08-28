@@ -159,6 +159,24 @@ html, body {
     border: 1px solid #FFF;
 }
 
+.center-items {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .grayscale {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);

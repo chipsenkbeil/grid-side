@@ -22,7 +22,9 @@
         {{ end }};
     ">
         {{ if eq .always_show_text true }}
-            <h3>{{ .name }}</h3>
+            <div class="center-items center-text fill-container">
+                <h3>{{ .name }}</h3>
+            </div>
         {{ end }}
 
         <div class="highlight-block">
