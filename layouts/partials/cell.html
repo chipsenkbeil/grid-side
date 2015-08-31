@@ -21,15 +21,18 @@
             33.33vh
         {{ end }};
     ">
+        <!-- Show text permanently -->
         {{ if eq .always_show_text true }}
-            <div class="center-items center-text fill-container">
-                <h3>{{ .name }}</h3>
+            <div class="center-items center-text fill-container black-overlay">
+                <h3 class="white-text">{{ .name }}</h3>
             </div>
         {{ end }}
 
-        <div class="highlight-block">
-            <h3>{{ .name }}</h3>
-        </div>
+        {{ if not (eq .no_highlight true) }}
+            <div class="highlight-block">
+                <h3 class="white-text">{{ .name }}</h3>
+            </div>
+        {{ end }}
     </div>
 </a>
 
