@@ -1,14 +1,14 @@
-<div style="border: 1px solid rgba(0, 0, 0, 0.05);">
+<div class="page-item-container">
     {{ with .Params.image }}
-        <img src="{{ . }}" style="width: 100%; height: auto;"></img>
+        <img src="{{ . }}" class="page-item-image"></img>
     {{ end }}
-    <div style="padding: 35px 50px;">
+    <div class="page-item-content">
         <header>
-            <time class="grey-text text-lighten-1">{{ .Date.Format "Mon Jan 06, 2006" }}</time>
-            <h2 class="black-text">{{ .Title }}</h2>
+            <time class="page-item-date">{{ .Date.Format "Mon Jan 06, 2006" }}</time>
+            <h2 class="page-item-title">{{ .Title }}</h2>
         </header>
-        <p class="grey-text text-darken-1">{{ .Summary }}</p>
-        <a href="{{ .Permalink }}" class="btn {{ if .Params.redirect }}red{{ end }}">
+        <p class="page-item-summary">{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="page-item-btn {{ if .Params.redirect }}page-item-btn-red{{ end }}">
             {{ if .Params.redirect }}Redirect{{ else }}Read More{{ end }}
         </a>
         <footer>
