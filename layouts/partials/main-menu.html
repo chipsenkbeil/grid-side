@@ -37,7 +37,7 @@
         <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
         {{ with .Site.Params.Footer }}
             <li class="blue-grey-text" style="border-top: 1px solid;"><!-- Separator --></li>
-            {{ range ..List }}
+            {{ range .List }}
                 <li>
                     <a href="{{ .icon_link }}">
                         <i class="fa fa-{{ .icon_class }} fa-2x"></i>
