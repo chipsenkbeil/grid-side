@@ -2,52 +2,30 @@
 
 {{ partial "head.html" . }}
 
-<body>
-    <style>
-        .row.cell-quarter-height > .col {
-            height: 25vh;
-        }
-        .row > .col:nth-child(2n+1) {
-            border: 1px solid black;
-            background-color: #009688;
-            color: white;
-        }
-        .row > .col:nth-child(2n) {
-            border: 1px solid black;
-            background-color: #607d8b;
-            color: white;
-        }
-        .full-width {
-            width: 100%;
-            height: auto;
-        }
-        .force-horizontal-center {
-            margin: 0 auto;
-        }
-    </style>
-    <div class="row cell-quarter-height">
-        <div class="col s4"></div>
-        <div class="col s4"></div>
-        <div class="col s4"></div>
-        <div class="col s3"></div>
-        <div class="col s6">
-            <h1 class="center-align full-width">404</h1>
-            <p class="center-align full-width">
-                The requested page was not found! Try searching the site for
-                another page!
-            </p>
-        </div>
-        <div class="col s3"></div>
-        <div class="col s3"></div>
-        <div class="col s6 force-horizontal-center">
-            <div class="js-vertical-align">
-                {{ partial "search.html" . }}
+<body class="page-colors minimum-viewport-height">
+    {{ partial "main-menu.html" . }}
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
+                <article>
+                    <header>
+                        <h1 class="blue-grey white-text center-items">404</h1>
+                    </header>
+
+                    <section class="center-items">
+                        <p style="font-size: 1.5em;">
+                            The requested page was not found! Try searching the site for
+                            another page!
+                        </p>
+                    </section>
+
+                    <section class="center-items large-form">
+                        {{ partial "search.html" . }}
+                    </section>
+                </article>
             </div>
         </div>
-        <div class="col s3"></div>
-        <div class="col s4"></div>
-        <div class="col s4"></div>
-        <div class="col s4"></div>
     </div>
 
     {{ partial "js.html" . }}
