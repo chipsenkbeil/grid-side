@@ -345,6 +345,10 @@ ul.tags li a {
     transform-style: preserve-3d;
 }
 
+.parallax__group--auto-height {
+    height: auto;
+}
+
 .parallax__layer {
     position: absolute;
     top: 0px;
