@@ -267,6 +267,11 @@ html, body {
     filter: grayscale(0%);
 }
 
+.grayscale.no-change-on-hover:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 .clearfix:before,
 .clearfix:after {
     content: ".";    

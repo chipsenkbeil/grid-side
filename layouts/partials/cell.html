@@ -1,8 +1,9 @@
-<a href="{{ .link }}" class="flex-item">
+<a href="{{ if .disable }}#!{{ else }}{{ .link }}{{ end }}" class="flex-item">
     <div class="cell
         fill-container
         no-padding
-        {{ if .grayscale }}grayscale{{ end }}
+        {{ if or .grayscale .disable }}grayscale{{ end }}
+        {{ if .disable }}no-change-on-hover{{ end }}
         {{ if .image }}fullsize-background-image{{ end }}
     " style="
         {{ with .image }}
@@ -28,7 +29,7 @@
             </div>
         {{ end }}
 
-        {{ if not (eq .no_highlight true) }}
+        {{ if not (or (eq .no_highlight true) .disable) }}
             <div class="highlight-block">
                 <h3 class="white-text">{{ .name }}</h3>
             </div>
