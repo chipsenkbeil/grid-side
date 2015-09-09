@@ -263,10 +263,18 @@ html, body {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
 .grayscale {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    
+
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -607,6 +615,7 @@ ul.pagination {
 }
 
 .flex-item {
+    position: relative;
     display: inline-block;
 }
 

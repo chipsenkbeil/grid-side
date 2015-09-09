@@ -5,11 +5,13 @@
 <div class="masonry-flex-container">
     {{ range $files }}
         <!-- TODO: Figure out why line height causes issues here -->
-        <div class="flex-item flex-item-spacing no-line-height rounded-corners z-depth-1">
-            <img src="{{ $url }}{{ .Name | urlize }}"
-                 class="fill-container-width rounded-corners" />
-            <div class="highlight-block rounded-corners">
-                <h3 class="white-text">{{ dateFormat "Mon Jan 06, 2006" .ModTime }}</h3>
+        <div class="flex-item flex-item-spacing no-line-height">
+            <div class="relative rounded-corners z-depth-1">
+                <img src="{{ $url }}{{ .Name | urlize }}"
+                     class="fill-container-width rounded-corners z-depth-1" />
+                <div class="highlight-block rounded-corners">
+                    <h3 class="white-text">{{ dateFormat "Mon Jan 06, 2006" .ModTime }}</h3>
+                </div>
             </div>
         </div>
     {{ end }}
