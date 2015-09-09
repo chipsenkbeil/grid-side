@@ -252,6 +252,17 @@ html, body {
     text-align: center;
 }
 
+.rounded-corners {
+    -webkit-border-radius: 10px;
+    border-radius: 10px; 
+}
+
+/* From materialize */
+.z-depth-1 {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
 .grayscale {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -599,10 +610,17 @@ ul.pagination {
     display: inline-block;
 }
 
+.flex-item-spacing {
+    margin: 10px;
+}
+
 /* Materialize small */
 @media only screen and (max-width: 600px) {
     .flex-item {
         width: 100%;
+    }
+    .flex-item-spacing {
+        width: calc(100% - 20px);
     }
 }
 
@@ -611,12 +629,18 @@ ul.pagination {
     .flex-item {
         width: 50%;
     }
+    .flex-item-spacing {
+        width: calc(50% - 20px);
+    }
 }
 
 /* Materialize large */
 @media only screen and (min-width: 993px) {
     .flex-item {
         width: 33.33%;
+    }
+    .flex-item-spacing {
+        width: calc(33.33% - 20px);
     }
 }
 
