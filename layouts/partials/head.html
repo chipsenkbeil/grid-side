@@ -14,6 +14,14 @@
     <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     {{ partial "css.html" . }}
     <script src="{{ .Site.BaseURL }}js/modernizr-latest.js"></script>
+    <script src="{{ .Site.BaseURL }}js/lazysizes.min.js"></script>
+    <script src="{{ .Site.BaseURL }}js/ls.noscript.min.js"></script>
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.addClasses = true;
+        lazySizesConfig.loadMode = 2;
+    </script>
 
     {{ with .Params.redirect }}
         <!-- Attempt redirect through refresh -->

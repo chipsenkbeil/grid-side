@@ -1,16 +1,23 @@
 $(document).ready(function(){
     // Employ Masonry layout configuration
-    var $container = $(".masonry-flex-container").imagesLoaded(function() {
-        $container.masonry({
-            itemSelector: ".flex-item",
-            columnWidth: ".flex-item",
-            percentPosition: true,
-            transitionDuration: 0 /* Disable animation of transitions */
+    var $container = $(".masonry-flex-container").imagesLoaded()
+        .always(function(instance) {
+            $container.masonry({
+                itemSelector: ".flex-item",
+                columnWidth: ".flex-item",
+                percentPosition: true,
+                transitionDuration: 0 /* Disable animation of transitions */
+            });
+
+            $(window).resize(function() {
+                $container.masonry();
+            });
         });
 
-        $(window).resize(function() {
+    $(".masonry-flex-container").each(function() {
+        this.addEventListener("load", function() {
             $container.masonry();
-        });
+        }, true);
     });
 
     // Attach our lightbox handlers

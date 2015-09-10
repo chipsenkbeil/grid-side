@@ -1,5 +1,32 @@
 
 /* ========================================================================= */
+/* = LAZY LOADING                                                            */
+/* ========================================================================= */
+
+/* NOTE: Assuming that using noscript plugin, so parent has this class! */
+.lazyload,
+.lazyloading img {
+    min-height: 60px;
+    min-width: 33.33%;
+}
+
+.lazyload img {
+    opacity: 0.0;
+    transform: scale(0.8);
+}
+
+.lazyloading img {
+    opacity: 0.5;
+    background: #F7F7F7 url("/img/loader.gif") no-repeat center;
+}
+
+.lazyloaded img {
+    opacity: 1.0;
+    transform: scale(1.0);
+    transition: opacity 700ms;
+}
+
+/* ========================================================================= */
 /* = NAVBAR MENU                                                             */
 /* ========================================================================= */
 
