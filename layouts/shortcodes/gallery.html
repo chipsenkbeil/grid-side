@@ -4,15 +4,16 @@
 
 <div class="masonry-flex-container">
     {{ range $files }}
+        {{ $date := dateFormat "Mon Jan 06, 2006" .ModTime }}
         <!-- TODO: Figure out why line height causes issues here -->
         <div class="flex-item flex-item-spacing no-line-height">
             <div class="relative rounded-corners z-depth-1 lazyload" data-noscript="">
                 <noscript>
-                    <a href="{{ $url }}{{ .Name | urlize }}" data-lightbox="{{ $dir }}">
+                    <a href="{{ $url }}{{ .Name | urlize }}" data-lightbox="{{ $dir }}" data-title="{{ $date }}">
                         <img src="{{ $url }}{{ .Name | urlize }}"
                              class="fill-container-width rounded-corners z-depth-1" />
                         <div class="highlight-block rounded-corners">
-                            <h3 class="white-text">{{ dateFormat "Mon Jan 06, 2006" .ModTime }}</h3>
+                            <h3 class="white-text">{{ $date }}</h3>
                         </div>
                     </a>
                 </noscript>
