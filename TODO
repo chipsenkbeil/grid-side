@@ -1,11 +1,11 @@
 TODO
 ====
 
-1. Add blog post single page
-2. Add blog post list page
-3. Add project single page (or pages?)
-4. Add project list page
-5. Add 404.html page
-6. Add favicon
-7. Refactor manual stylings with CSS classes
+1. Add project single page (or pages?)
+2. Add project list page
+3. Revise 404.html page
+4. Refactor gallery to be a section whose entire content is in a partial
+   (so more easily used in other sections)
+5. Add project section whose entire content is in a partial
+6. Refactor existing partials to be more organized
 
