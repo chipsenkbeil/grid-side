@@ -16,6 +16,9 @@ contact, or miscellaneous in order to provide slight changes in styling.
 - Current imagesLoaded.js version is `3.1.8`.
 - Current Modernizr.js version is `2.8.3`.
 - Current Highlight.js version is `8.7` and contains all 130 languages.
+- Current lazysizes.js version is `1.2.0`.
+- Current ls.noscript.js version is `1.2.0`.
+- Current lightbox.js version is `2.8.1`.
 
 Contents
 --------

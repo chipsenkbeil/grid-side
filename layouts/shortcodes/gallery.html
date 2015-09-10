@@ -8,11 +8,13 @@
         <div class="flex-item flex-item-spacing no-line-height">
             <div class="relative rounded-corners z-depth-1 lazyload" data-noscript="">
                 <noscript>
-                    <img src="{{ $url }}{{ .Name | urlize }}"
-                         class="fill-container-width rounded-corners z-depth-1" />
-                    <div class="highlight-block rounded-corners">
-                        <h3 class="white-text">{{ dateFormat "Mon Jan 06, 2006" .ModTime }}</h3>
-                    </div>
+                    <a href="{{ $url }}{{ .Name | urlize }}" data-lightbox="{{ $dir }}">
+                        <img src="{{ $url }}{{ .Name | urlize }}"
+                             class="fill-container-width rounded-corners z-depth-1" />
+                        <div class="highlight-block rounded-corners">
+                            <h3 class="white-text">{{ dateFormat "Mon Jan 06, 2006" .ModTime }}</h3>
+                        </div>
+                    </a>
                 </noscript>
             </div>
         </div>
