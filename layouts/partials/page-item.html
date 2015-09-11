@@ -12,6 +12,8 @@
             {{ if .Params.redirect }}Redirect{{ else }}Read More{{ end }}
         </a>
         <footer>
+            {{ partial "categories.html" . }}
+            <span class="separator">|</span>
             {{ partial "tags.html" . }}
         </footer>
     </div>

@@ -112,6 +112,10 @@ ul.menu li {
     padding: 35px 50px;
 }
 
+.page-item-content footer {
+    margin-top: 1em;
+}
+
 .page-item-image {
     width: 100%;
     height: auto;
@@ -346,17 +350,36 @@ html, body {
     margin-top: 0px;
 }
 
+.date-color {
+    color: #BDBDBD;
+}
+
+.separator {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #BDBDBD;
+}
+
+ul.categories,
 ul.tags {
+    display: inline;
     list-style: none;
 }
 
+ul.categories li,
 ul.tags li {
     display: inline;
     color: #BDBDBD;
 }
 
+ul.categories li a,
 ul.tags li a {
     color: #BDBDBD;
+}
+
+ul.categories li a:hover,
+ul.tags li a:hover {
+    color: #03a9f4;
 }
 
 .fullsize-background-image {

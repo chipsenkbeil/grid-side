@@ -14,7 +14,11 @@
                 <article>
                     <header>
                         <h1 class="article-title">{{ .Title }}</h1>
-                        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                        <time class="date-color">{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                        <span class="separator">|</span>
+                        {{ partial "categories.html" . }}
+                        <span class="separator">|</span>
+                        {{ partial "tags.html" . }}
                     </header>
 
                     <hr>
