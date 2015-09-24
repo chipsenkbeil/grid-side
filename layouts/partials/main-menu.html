@@ -1,12 +1,12 @@
 
-<nav class="main-menu menu-colors">
+<nav class="main-menu">
     <ul class="menu menu-colors no-list-float">
         <li><a href="{{ .Site.BaseURL }}"><i class="fa fa-home fa-2x"></i></a></li>
         <li>
             <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
 
             <!-- NOTE: Only support two levels of menus at the moment! -->
-            <ul class="menu menu-colors no-list-float">
+            <ul class="menu flexible-width menu-colors no-list-float">
                 {{ $currentNode := . }}
                 {{ range .Site.Menus.main }}
                     <li {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="active"{{ end }}>
@@ -17,7 +17,7 @@
                             <span class="drop-right"></span>
                             <!-- <i class="fa fa-caret-right"></i> -->
                         </a>
-                        <ul class="menu menu-colors no-list-float">
+                        <ul class="menu flexible-width menu-colors no-list-float">
                             {{ range .Children }}
                                 <li {{ if $currentNode.IsMenuCurrent "main" . }} class="active" {{ end }}>
                                     <a href="{{ .URL }}">{{ .Name }}</a>
