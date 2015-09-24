@@ -240,6 +240,10 @@ html, body {
     box-shadow: 0 0 20px #5c5c5c;
 }
 
+.transparent {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .main-content {
     display: block;
     position: relative;
