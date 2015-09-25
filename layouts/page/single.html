@@ -1,15 +1,15 @@
-{{ partial "html-start.html" . }}
-{{ partial "head.html" . }}
+{{ partial "core/html-start.html" . }}
+{{ partial "core/head.html" . }}
 
 <body class="page-colors minimum-viewport-height">
-    {{ partial "main-menu.html" . }}
+    {{ partial "core/main-menu.html" . }}
 
     <section class="main-content">
         {{ .Content }}
     </section>
 
-    {{ partial "js.html" . }}
+    {{ partial "core/js.html" . }}
 </body>
 
-{{ partial "html-end.html" . }}
+{{ partial "core/html-end.html" . }}
 

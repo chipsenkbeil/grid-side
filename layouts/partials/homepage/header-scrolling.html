@@ -1,7 +1,7 @@
 <!-- NOTE: Must be at root level for firefox to work (cannot wrap in header) -->
 <div class="parallax__group">
     <div class="parallax__layer parallax__layer--base">
-        {{ partial "header-logo.html" . }}
+        {{ partial "homepage/header-logo.html" . }}
     </div>
     <div class="parallax__layer parallax__layer--back {{ if .image }}fullsize-background-image{{ end }}"
         {{ if .image }}

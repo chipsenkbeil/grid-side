@@ -1,22 +1,22 @@
-{{ partial "html-start.html" . }}
-{{ partial "head.html" . }}
+{{ partial "core/html-start.html" . }}
+{{ partial "core/head.html" . }}
 
 <body>
-    {{ partial "main-menu.html" . }}
+    {{ partial "core/main-menu.html" . }}
 
     <section class="main-content">
         <div class="masonry-flex-container">
             {{ range .Paginator.Pages }}
                 <div class="flex-item">
-                    {{ partial "page-item.html" . }}
+                    {{ partial "post/page-item.html" . }}
                 </div>
             {{ end }}
         </div>
-        {{ partial "pagination.html" . }}
+        {{ partial "extra/pagination.html" . }}
     </section>
 
-    {{ partial "js.html" . }}
+    {{ partial "core/js.html" . }}
 </body>
 
-{{ partial "html-end.html" . }}
+{{ partial "core/html-end.html" . }}
 

@@ -1,11 +1,11 @@
-{{ partial "html-start.html" . }}
+{{ partial "core/html-start.html" . }}
 
-{{ partial "head.html" . }}
+{{ partial "core/head.html" . }}
 
 <body class="page-colors">
     <div class="parallax">
         {{ with .Site.Params.Header }}
-            {{ partial "header-scrolling.html" . }}
+            {{ partial "homepage/header-scrolling.html" . }}
         {{ end }}
 
         <div class="parallax__group parallax__group--auto-height">
@@ -13,7 +13,7 @@
                 <div class="row-colors center-align">
                     <h2 class="no-margin">
                         <ul class="horizontal no-bullets no-margin">
-                            <li>{{ partial "svg-face.html" . }}</li>
+                            <li>{{ partial "homepage/svg-face.html" . }}</li>
                             <li>About Me</li>
                         </ul>
                     </h2>
@@ -21,7 +21,7 @@
 
                 <div class="flex-container">
                     {{ range .Site.Params.Cells.List }}
-                        {{ partial "cell.html" . }}
+                        {{ partial "homepage/cell.html" . }}
                     {{ end }}
                 </div>
 
@@ -44,8 +44,8 @@
         </div>
     </div>
 
-    {{ partial "js.html" . }}
+    {{ partial "core/js.html" . }}
 </body>
 
-{{ partial "html-end.html" . }}
+{{ partial "core/html-end.html" . }}
 

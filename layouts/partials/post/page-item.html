@@ -12,9 +12,9 @@
             {{ if .Params.redirect }}Redirect{{ else }}Read More{{ end }}
         </a>
         <footer>
-            {{ partial "categories.html" . }}
+            {{ partial "post/categories.html" . }}
             <span class="separator">|</span>
-            {{ partial "tags.html" . }}
+            {{ partial "post/tags.html" . }}
         </footer>
     </div>
 </div>
