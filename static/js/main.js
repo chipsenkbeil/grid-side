@@ -24,7 +24,8 @@ $(document).ready(function(){
     var $infiniteContainer = $(".masonry-flex-container.infinite-scroll").infinitescroll({
         navSelector: "ul.pagination",
         nextSelector: "ul.pagination a:last",
-        itemSelector: ".masonry-flex-container .flex-item"
+        itemSelector: ".masonry-flex-container .flex-item",
+        loadingImg: "/img/loader.gif"
     }, function(elements) {
         var $elements = $(elements);
         $elements.imagesLoaded(function() {

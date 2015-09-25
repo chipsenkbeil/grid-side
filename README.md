@@ -19,6 +19,7 @@ contact, or miscellaneous in order to provide slight changes in styling.
 - Current lazysizes.js version is `1.2.0`.
 - Current ls.noscript.js version is `1.2.0`.
 - Current lightbox.js version is `2.8.1`.
+- Current infinitescroll.js version is `2.1.0`.
 
 Contents
 --------
