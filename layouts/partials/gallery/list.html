@@ -1,0 +1,16 @@
+{{ partial "core/html-start.html" . }}
+{{ partial "core/head.html" . }}
+
+<body class="page-colors minimum-viewport-height">
+    {{ partial "core/main-menu.html" . }}
+
+    <section class="main-content">
+        {{ partial "gallery/collection.html" . }}
+        {{ partial "extra/pagination.html" . }}
+    </section>
+
+    {{ partial "core/js.html" . }}
+</body>
+
+{{ partial "core/html-end.html" . }}
+

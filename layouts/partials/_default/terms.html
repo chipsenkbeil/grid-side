@@ -1,0 +1,41 @@
+
+{{ partial "core/html-start.html" . }}
+
+{{ partial "core/head.html" . }}
+
+<body class="page-colors minimum-viewport-height">
+    {{ partial "core/main-menu.html" . }}
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors article-shadow">
+                <article>
+                    <header>
+                        <h2 class="article-title">{{ .Title }}</h2>
+                    </header>
+
+                    <hr>
+
+                    <section>
+                        <h5>
+                            <ul class="columns columns-responsive">
+                                {{ $baseUrl := .Site.BaseURL }}
+                                {{ $data := .Data }}
+                                {{ range $key, $value := .Data.Terms.Alphabetical }}
+                                    <li>
+                                        <a href="{{ $baseUrl}}{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> {{ $value.Count }}
+                                    </li>
+                                {{ end }}
+                            </ul>
+                        </h5>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    {{ partial "core/js.html" . }}
+</body>
+
+{{ partial "core/html-end.html" . }}
+

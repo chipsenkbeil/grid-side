@@ -1,0 +1,35 @@
+{{ partial "core/html-start.html" . }}
+
+{{ partial "core/head.html" . }}
+
+<body class="page-colors minimum-viewport-height">
+    {{ partial "core/main-menu.html" . }}
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
+                <article>
+                    <header>
+                        <h1 class="blue-grey white-text center-items">404</h1>
+                    </header>
+
+                    <section class="center-items">
+                        <p style="font-size: 1.5em;">
+                            The requested page was not found! Try searching the site for
+                            another page!
+                        </p>
+                    </section>
+
+                    <section class="center-items large-form">
+                        {{ partial "core/search.html" . }}
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    {{ partial "core/js.html" . }}
+</body>
+
+{{ partial "core/html-end.html" . }}
+
