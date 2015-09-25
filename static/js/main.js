@@ -1,23 +1,35 @@
 $(document).ready(function(){
     // Employ Masonry layout configuration
-    var $container = $(".masonry-flex-container").imagesLoaded()
-        .always(function(instance) {
-            $container.masonry({
-                itemSelector: ".flex-item",
-                columnWidth: ".flex-item",
-                percentPosition: true,
-                transitionDuration: 0 /* Disable animation of transitions */
-            });
-
-            $(window).resize(function() {
-                $container.masonry();
-            });
+    var $container = $(".masonry-flex-container")
+    $container.imagesLoaded().always(function(instance) {
+        $container.masonry({
+            itemSelector: ".flex-item",
+            columnWidth: ".flex-item",
+            percentPosition: true,
+            transitionDuration: 0 /* Disable animation of transitions */
         });
 
-    $(".masonry-flex-container").each(function() {
+        $(window).resize(function() {
+            $container.masonry();
+        });
+    });
+
+    $container.each(function() {
         this.addEventListener("load", function() {
             $container.masonry();
         }, true);
+    });
+
+    // Provide infinite scroll if enabled
+    var $infiniteContainer = $(".masonry-flex-container.infinite-scroll").infinitescroll({
+        navSelector: "ul.pagination",
+        nextSelector: "ul.pagination a:last",
+        itemSelector: ".masonry-flex-container .flex-item"
+    }, function(elements) {
+        var $elements = $(elements);
+        $elements.imagesLoaded(function() {
+            $infiniteContainer.masonry("appended", $elements);
+        });
     });
 
     // Attach our lightbox handlers
@@ -27,8 +39,8 @@ $(document).ready(function(){
         var lightbox = $("#" + lightboxId);
 
         var lightboxProperties = {
-            "padding": "70px", 
-            "width": "100%", 
+            "padding": "70px",
+            "width": "100%",
             "height": "100%",
             "background-color": "rgba(0, 0, 0, 0.95)",
             "color": "white",
