@@ -1,13 +1,13 @@
 name = "GridSide"
 license = "MIT"
-licenselink = "https://github.com/rcsenkbeil/grid-side/blob/master/LICENSE.md"
+licenselink = "https://github.com/chipsenkbeil/grid-side/blob/master/LICENSE.md"
 description = "Personal portfolio, blog, and gallery for use by the Hugo generator."
-homepage = "http://rcsenkbeil.github.io/grid-side"
+homepage = "http://chipsenkbeil.github.io/grid-side"
 tags = ["blog", "portfolio", "projects"]
 features = ["blog", "portfolio", "gallery"]
-min_version = 0.15-DEV
+min_version = 0.14
 
 [author]
     name = "Chip Senkbeil"
-    homepage = "http://www.senkbeil.org"
+    homepage = "http://chipsenkbeil.com/"
 
