@@ -1,0 +1,7 @@
+
+<div class="masonry-flex-container">
+    {{ range .Paginator.Pages }}
+        {{ partial "gallery/item.html" . }}
+    {{ end }}
+</div>
+

@@ -1,0 +1,20 @@
+
+{{ $url := $.Site.BaseURL }}
+{{ $image := .Params.image | urlize }}
+{{ $date := dateFormat "Mon Jan 06, 2006" .Date }}
+{{ $title := .Title }}
+<!-- TODO: Figure out why line height causes issues here -->
+<div class="flex-item flex-item-spacing no-line-height">
+    <div class="relative rounded-corners z-depth-1 lazyload" data-noscript="">
+        <noscript>
+            <a href="{{ $url }}{{ $image }}" data-lightbox="gallery" data-title="{{ $title }}">
+                <img src="{{ $url }}{{ $image }}"
+                     class="fill-container-width rounded-corners z-depth-1" />
+                <div class="highlight-block rounded-corners">
+                    <h3 class="white-text">{{ $date }}</h3>
+                </div>
+            </a>
+        </noscript>
+    </div>
+</div>
+
