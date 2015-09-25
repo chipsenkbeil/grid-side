@@ -43,14 +43,8 @@
     display: block;
     position: fixed;
 
-    width: 100%;
+    width: 70px;
     height: 100%;
-
-    background-color: rgba(0, 0, 0, 0);
-
-    pointer-events: none;
-
-    overflow-y: scroll;
 
     top: 0px;
     left: 0px;
@@ -69,9 +63,6 @@
 ul.menu {
     display: block;
 
-    pointer-events: auto;
-
-    width: 70px;
     min-height: 100%;
 
     margin: 0px;
