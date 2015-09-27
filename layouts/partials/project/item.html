@@ -1,6 +1,11 @@
 
 {{ $url := $.Site.BaseURL }}
-{{ $image := .Params.image | urlize }}
+{{ if isset .Params "image" }}
+    {{ $.Scratch.Set "image" .Params.image }}
+{{ else }}
+    {{ $.Scratch.Set "image" "/img/placeholder.jpg" }}
+{{ end }}
+{{ $image := $.Scratch.Get "image" | urlize }}
 {{ $title := .Title }}
 {{ $summary := .Summary }}
 {{ $link := .Permalink }}
