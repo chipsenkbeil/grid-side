@@ -4,7 +4,9 @@
     {{ end }}
     <div class="page-item-content">
         <header>
-            <time class="page-item-date">{{ .Date.Format "Mon Jan 06, 2006" }}</time>
+            {{ if not .Date.IsZero }}
+                <time class="page-item-date">{{ .Date.Format "Mon Jan 06, 2006" }}</time>
+            {{ end }}
             <h2 class="page-item-title">{{ .Title }}</h2>
         </header>
         <p class="page-item-summary">{{ .Summary }}</p>
