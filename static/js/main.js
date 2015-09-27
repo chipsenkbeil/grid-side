@@ -20,28 +20,6 @@ $(document).ready(function() {
         }, true);
     });
 
-    // Provide modal dialog displays
-    var addDialogClickEvent = function($dialogLink, $dialogContent) {
-        $dialogLink.click(function(e) {
-            e.preventDefault();
-
-            var dialogContentHtml = $dialogContent.html();
-            vex.open().append(dialogContentHtml);
-        });
-    };
-    var attachDialogToContainer = function($dialogContainer) {
-        var $dialogLink = $dialogContainer.find(".dialog-link");
-        var $dialogContent = $dialogContainer.find(".dialog-content");
-        addDialogClickEvent($dialogLink, $dialogContent);
-    };
-    $(window).load(function() {
-        var $dialogContainer = $(".dialog-container");
-        $dialogContainer.each(function() {
-            var $dialogContainer = $(this);
-            attachDialogToContainer($dialogContainer);
-        });
-    });
-
     // Provide infinite scroll if enabled
     var $infiniteContainer = $(".masonry-flex-container.infinite-scroll").infinitescroll({
         navSelector: "ul.pagination",
@@ -52,10 +30,6 @@ $(document).ready(function() {
         var $elements = $(elements);
         $elements.imagesLoaded(function() {
             $infiniteContainer.masonry("appended", $elements);
-            $elements.filter(".dialog-container").each(function() {
-                var $dialogContainer = $(this);
-                attachDialogToContainer($dialogContainer);
-            });
         });
     });
 
