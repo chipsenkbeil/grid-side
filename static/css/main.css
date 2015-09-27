@@ -1,5 +1,25 @@
 
 /* ========================================================================= */
+/* = MODAL DIALOG                                                            */
+/* ========================================================================= */
+
+/* Used to contain the hyperlink and dialog content */
+.dialog-container {}
+
+/* Used to mark dialog link to click */
+.dialog-link {}
+
+/* Used by Javascript to inject into actual modal display */
+.dialog-content {
+    display: none;
+}
+
+/* Contains stylings to apply to the dialog content */
+.dialog-content-stylings {
+    padding: 5px;
+}
+
+/* ========================================================================= */
 /* = LAZY LOADING                                                            */
 /* ========================================================================= */
 
@@ -25,6 +45,19 @@
     opacity: 1.0;
     transform: scale(1.0);
     transition: opacity 700ms;
+}
+
+/* ========================================================================= */
+/* = PROJECT                                                                 */
+/* ========================================================================= */
+
+/* Contains the project image and title */
+.project-container {}
+
+.project-container-title {
+    padding: 5px;
+    background-color: #455A64;
+    color: #FFFFFF;
 }
 
 /* ========================================================================= */
@@ -304,7 +337,26 @@ html, body {
 
 .rounded-corners {
     -webkit-border-radius: 10px;
-    border-radius: 10px; 
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rounded-corners-top {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.rounded-corners-bottom {
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* From materialize */

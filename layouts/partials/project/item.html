@@ -8,13 +8,33 @@
 <div class="flex-item flex-item-spacing no-line-height">
     <div class="relative rounded-corners z-depth-1 lazyload" data-noscript="">
         <noscript>
-            <a href="{{ $link }}">
+            <div class="dialog-container">
+                <a href="{{ $link }}" class="dialog-link">
+                    <div class="project-container">
+                        <img src="{{ $image }}" class="fill-container-width rounded-corners-top z-depth-1" />
+                        <div class="rounded-corners-bottom center-text project-container-title">
+                            <h3>{{ $title }}</h3>
+                        </div>
+                    </div>
+                    <div class="highlight-block rounded-corners">
+                    </div>
+                </a>
+                <div class="dialog-content">
+                    <div class="dialog-content-stylings">
+                        <h3>{{ $title }}</h3>
 
-                <img src="{{ $image }}" class="fill-container-width rounded-corners z-depth-1" />
-                <div class="highlight-block rounded-corners">
-                    <h3 class="white-text">{{ $title }}</h3>
+                        <hr>
+
+                        <section>
+                            {{ $summary }}
+                        </section>
+
+                        <hr>
+
+                        <a href="{{ $link }}" class="page-item-btn">Go to project</a>
+                    </div>
                 </div>
-            </a>
+            </div>
         </noscript>
     </div>
 </div>

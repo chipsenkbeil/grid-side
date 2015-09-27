@@ -1,8 +1,21 @@
+<!-- Load materialize used to provide parts of theme visuals -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/materialize.min.css">
+
+<!-- Load font awesome used for various icons -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
+
 {{ with .Site.Params.Highlight }}
+    <!-- Load highlight theme used for client-side syntax highlighting -->
     <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/styles/{{ .style }}.css">
 {{ end }}
+
+<!-- Load lightbox stylings -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/lightbox.css">
+
+<!-- Load styles for vex dialogs -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/vex.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/vex-theme-default.css">
+
+<!-- Load main theme stylings -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
 

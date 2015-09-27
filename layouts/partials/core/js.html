@@ -1,12 +1,30 @@
+<!-- Load jquery used for various plugins -->
 <script src="{{ .Site.BaseURL }}js/jquery-2.1.4.min.js"></script>
+
+<!-- Load materialize used to provide parts of theme visuals -->
 <script src="{{ .Site.BaseURL }}js/materialize.min.js"></script>
+
+<!-- Load imagesloaded needed by masonry to handle adding images -->
 <script src="{{ .Site.BaseURL }}js/imagesloaded.pkgd.min.js"></script>
+
+<!-- Load masonry used for layout on list pages -->
 <script src="{{ .Site.BaseURL }}js/masonry.pkgd.min.js"></script>
+
 {{ if .Site.Params.Highlight }}
+    <!-- Load highlight used for client-side syntax highlighting -->
     <script src="{{ .Site.BaseURL }}js/highlight.pack.js"></script>
 {{ end }}
+
+<!-- Load lightbox used for gallery viewing -->
 <script src="{{ .Site.BaseURL }}js/lightbox.min.js"></script>
+
+<!-- Load infinite scroll used to link together paginated content -->
 <script src="{{ .Site.BaseURL }}js/jquery.infinitescroll.min.js"></script>
-<!-- <script src="{{ .Site.BaseURL }}js/pointer-events-polyfill.js"></script> -->
+
+<!-- Initialize dialog support -->
+<script src="{{ .Site.BaseURL }}js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = "vex-theme-default";</script>
+
+<!-- Load theme-specific Javascript -->
 <script src="{{ .Site.BaseURL }}js/main.js"></script>
 
