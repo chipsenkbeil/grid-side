@@ -5,7 +5,7 @@
     {{ partial "core/main-menu.html" . }}
 
     <section class="main-content">
-        <div class="masonry-flex-container">
+        <div class="masonry-flex-container infinite-scroll">
             {{ if .IsNode }}
                 {{ range .Paginator.Pages }}
                     <div class="flex-item">
