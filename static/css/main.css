@@ -55,7 +55,7 @@
 .project-container {}
 
 .project-container-title {
-    padding: 5px;
+    padding: 10px;
     background-color: #455A64;
     color: #FFFFFF;
 }
@@ -435,6 +435,7 @@ ul.categories,
 ul.tags {
     display: inline;
     list-style: none;
+    line-height: 1em;
 }
 
 ul.categories li,

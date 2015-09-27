@@ -6,35 +6,18 @@
 {{ $link := .Permalink }}
 <!-- TODO: Figure out why line height causes issues here -->
 <div class="flex-item flex-item-spacing no-line-height">
-    <div class="relative rounded-corners z-depth-1 lazyload" data-noscript="">
+    <div class="relative lazyload" data-noscript="">
         <noscript>
-            <div class="dialog-container">
-                <a href="{{ $link }}" class="dialog-link">
-                    <div class="project-container">
-                        <img src="{{ $image }}" class="fill-container-width rounded-corners-top z-depth-1" />
-                        <div class="rounded-corners-bottom center-text project-container-title">
-                            <h3>{{ $title }}</h3>
-                        </div>
-                    </div>
-                    <div class="highlight-block rounded-corners">
-                    </div>
-                </a>
-                <div class="dialog-content">
-                    <div class="dialog-content-stylings">
-                        <h3>{{ $title }}</h3>
-
-                        <hr>
-
-                        <section>
-                            {{ $summary }}
-                        </section>
-
-                        <hr>
-
-                        <a href="{{ $link }}" class="page-item-btn">Go to project</a>
+            <a href="{{ $link }}">
+                <div class="project-container rounded-corners z-depth-1">
+                    <img src="{{ $image }}" class="fill-container-width rounded-corners-top" />
+                    <div class="rounded-corners-bottom center-text project-container-title">
+                        <h4 class="white-text">{{ $title }}</h4>
+                        {{ partial "extra/categories.html" . }}
+                        {{ partial "extra/tags.html" . }}
                     </div>
                 </div>
-            </div>
+            </a>
         </noscript>
     </div>
 </div>
