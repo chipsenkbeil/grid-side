@@ -54,6 +54,10 @@
 /* Contains the project image and title */
 .project-container {}
 
+.project-container-image {
+    background-color: #FFFFFF;
+}
+
 .project-container-title {
     padding: 10px;
     background-color: #455A64;
