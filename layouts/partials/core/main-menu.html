@@ -8,8 +8,8 @@
             <!-- NOTE: Only support two levels of menus at the moment! -->
             <ul class="menu flexible-width menu-colors no-list-float">
                 {{ $currentNode := . }}
-                {{ range .Site.Menus.main }}
-                    <li {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}class="active"{{ end }}>
+                {{ range .Site.Menus.Main }}
+                    <li {{ if or ($currentNode.IsMenuCurrent "Main" .) ($currentNode.HasMenuCurrent "Main" .) }}class="active"{{ end }}>
                     {{ if .HasChildren }}
                         <a href="#!">
                             {{ .Pre }}
@@ -19,7 +19,7 @@
                         </a>
                         <ul class="menu flexible-width menu-colors no-list-float">
                             {{ range .Children }}
-                                <li {{ if $currentNode.IsMenuCurrent "main" . }} class="active" {{ end }}>
+                                <li {{ if $currentNode.IsMenuCurrent "Main" . }} class="active" {{ end }}>
                                     <a href="{{ .URL }}">{{ .Name }}</a>
                                 </li>
                             {{ end }}
