@@ -1,4 +1,4 @@
-<video preload="auto" autoplay loop muted>
+<video preload="auto" autoplay loop muted {{ with .Params.video_preview_fallback }}poster="{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
     {{ with .Params.video_preview_mp4 }}
         <source type="video/mp4" src="{{ . }}">
     {{ end }}

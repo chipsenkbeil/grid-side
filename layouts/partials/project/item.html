@@ -16,7 +16,12 @@
             <a href="{{ $link }}">
                 <div class="project-container rounded-corners z-depth-1">
                     <div class="project-container-image rounded-corners-top">
-                        <img src="{{ $image }}" class="fill-container-width rounded-corners-top" />
+                        {{ if or (isset .Params "video_preview_mp4") (isset .Params "video_preview_ogv") }}
+                            {{ .Scratch.Set "class" "rounded-corners-top fill-container-width" }}
+                            {{ partial "extra/video.html" . }}
+                        {{ else }}
+                            <img src="{{ $image }}" class="fill-container-width rounded-corners-top" />
+                        {{ end }}
                     </div>
                     <div class="rounded-corners-bottom center-text project-container-title">
                         <h4 class="white-text">{{ $title }}</h4>
