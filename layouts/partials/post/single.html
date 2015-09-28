@@ -31,6 +31,8 @@
                         {{ end }}
                     </section>
 
+                    {{ partial "extra/disqus.html" . }}
+
                     <footer class="right-align">
                         <p><small>{{ .Site.Copyright | markdownify }}</small></p>
                     </footer>
