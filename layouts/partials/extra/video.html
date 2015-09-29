@@ -1,9 +1,15 @@
 <video preload="auto" autoplay loop muted {{ with .Params.video_preview_fallback }}poster="{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
-    {{ with .Params.video_preview_mp4 }}
-        <source type="video/mp4" src="{{ . }}">
+    {{ with .Params.video_preview_webm }}
+        <source src="{{ . }}" type='video/webm; codecs="vp8.0, vorbis"'>
     {{ end }}
     {{ with .Params.video_preview_ogv }}
-        <source type="video/mp4" src="{{ . }}">
+        <source src="{{ . }}" type='video/ogg; codecs="theora, vorbis"'>
+    {{ end }}
+    {{ with .Params.video_preview_mp4 }}
+        <source src="{{ . }}" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
+    {{ end }}
+    {{ with .Params.video_preview_3gp }}
+        <source src="{{ . }}" type='video/3gp'>
     {{ end }}
     {{ with .Params.video_preview_fallback }}
         <img src="{{ . }}">
