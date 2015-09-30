@@ -2,12 +2,12 @@ GridSide Theme
 ==============
 
 The GridSide theme is a multi-page portfolio and blog utilizing the
-[Materialize][materialize] frontend framework. Medium-style comments may be
-added to blog entries using [SideComments.js][sidecomments.js].
+[Materialize][materialize] frontend framework. Comments can be added using
+Disqus. 
 
 The theme contains a main page with a single grid of images representing
-different sections of the website. Sections can be marked as blog, project,
-contact, or miscellaneous in order to provide slight changes in styling.
+different sections of the website. Sections can be _post_, _gallery_, or
+_project_ for various rendering.
 
 - Current Materialize version is `0.97.0`.
 - Current Font Awesome version is `4.4.0`.
@@ -27,14 +27,10 @@ Contents
 - [Installation](#installation)
 - [Getting Started](#getting-started)
     - [The Config File](#the-config-file) 
-    - [Adding a Blog Section](#adding-a-blog-section)
-        - [Optional - Adding Medium-style Comments with Hull.io](#optional---adding-medium-style-comments-with-hullio)
-    - [Adding a Project Section](#adding-a-project-section)
-    - [Adding a Contact Section](#adding-a-contact-section)
-    - [Adding a Miscellaneous Section](#adding-a-miscellaneous-section)
+    - [Adding a custom post section](#adding-a-custom-post-section)
+    - [Adding a custom project section](#adding-a-custom-project-section)
+    - [Adding a custom gallery section](#adding-a-custom-gallery-section)
     - [Nearly Finished](#nearly-finished)
-- [TODO](#todo)
-- [Notes](#notes)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -45,7 +41,7 @@ Inside the folder of your Hugo site run:
 
     $ mkdir themes
     $ cd themes
-    $ git clone https://github.com/rcsenkbeil/grid-side
+    $ git clone https://github.com/chipsenkbeil/grid-side
 
 For more information read the official [setup guide][setup_guide] of Hugo.
 
@@ -56,28 +52,69 @@ Getting Started
 
 Take a look inside the [`exampleSite`][exampleSite] folder of this theme.
 You'll find a file called [`config.toml`][config.toml]. To use it, copy the
-[`config.toml`][config.toml] in the root folder of your Hugo site. Feel free
+[`config.toml`][config.toml] in the root folder of your Hugo site. The config
+file contains detailed explanation of each available property. Feel free
 to customize this theme as you like.
 
-### Adding a Blog Section ###
+### Adding a custom post section ###
 
-TODO
+By default, the theme provides a custom view of `post/`. If you would like
+to have a different section name than post, you can specify the section by
+creating the following:
 
-#### Optional - Adding Medium-style Comments with Hull.io ####
+```
+For layouts/custom_post_section/single.html:
 
-TODO
+{{ partial "post/single.html" . }}
 
-### Adding a Project Section ###
+```
 
-TODO
+```
+For layouts/section/custom_post_section.html:
 
-### Adding a Contact Section ###
+{{ partial "post/list.html" . }}
 
-TODO
+```
 
-### Adding a Miscellaneous Section ###
+### Adding a custom project section ###
 
-TODO
+By default, the theme provides a custom view of `project/`. If you would like
+to have a different section name than project, you can specify the section by
+creating the following:
+
+```
+For layouts/custom_project_section/single.html:
+
+{{ partial "project/single.html" . }}
+
+```
+
+```
+For layouts/section/custom_project_section.html:
+
+{{ partial "project/list.html" . }}
+
+```
+
+### Adding a custom gallery section ###
+
+By default, the theme provides a custom view of `gallery/`. If you would like
+to have a different section name than gallery, you can specify the section by
+creating the following:
+
+```
+For layouts/custom_gallery_section/single.html:
+
+{{ partial "gallery/single.html" . }}
+
+```
+
+```
+For layouts/section/custom_gallery_section.html:
+
+{{ partial "gallery/list.html" . }}
+
+```
 
 ### Nearly Finished ###
 
@@ -86,27 +123,6 @@ In order to see your site in action, run Hugo's built-in local server.
     $ hugo server -w
 
 Now enter `localhost:1313` in the address bar of your browser.
-
-TODO
-----
-
-See [TODO][todo] for more information.
-
-Notes
------
-
-Currently there are two features that require Javascript: parallax scrolling
-and centering text within the grid.
-
-Parallax is provided by the Materialize library.
-
-Centering text is a hack that will hopefully be removed in the future, but
-is needed to center text within a floating element. The culprit is the
-Materialize column adding a `float: left`, causing flexbox alignments to
-be ignored. See [here][centering_problem] for more information.
-
-Potential grid replacement would be [Flexbox Grid][flexbox_grid], which
-should allow proper vertical centering.
 
 Contributing
 ------------
@@ -121,14 +137,10 @@ This theme is released under the MIT License. For more information read the
 [license][license].
 
 [materialize]: http://www.materializecss.com/
-[sidecomments.js]: https://github.com/aroc/side-comments
 [setup_guide]: http://gohugo.io/overview/installing/
-[exampleSite]: https://github.com/rcsenkbeil/grid-side/tree/master/exampleSite
-[config.toml]: https://github.com/rcsenkbeil/grid-side/blob/master/exampleSite/config.toml
-[issue_tracker]: https://github.com/rcsenkbeil/grid-side/issues
-[pull_request]: https://github.com/rcsenkbeil/grid-side/pulls
-[license]: https://github.com/rcsenkbeil/grid-side/blob/master/LICENSE
-[centering_problem]: https://github.com/Dogfalo/materialize/issues/1241
-[flexbox_grid]: http://flexboxgrid.com
-[todo]: https://github.com/rcsenkbeil/grid-side/blob/master/TODO
+[exampleSite]: https://github.com/chipsenkbeil/grid-side/tree/master/exampleSite
+[config.toml]: https://github.com/chipsenkbeil/grid-side/blob/master/exampleSite/config.toml
+[issue_tracker]: https://github.com/chipsenkbeil/grid-side/issues
+[pull_request]: https://github.com/chipsenkbeil/grid-side/pulls
+[license]: https://github.com/chipsenkbeil/grid-side/blob/master/LICENSE
 
