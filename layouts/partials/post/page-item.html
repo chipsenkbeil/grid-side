@@ -1,6 +1,7 @@
+{{ $baseUrl := .Site.BaseURL }}
 <div class="page-item-container">
     {{ with .Params.image }}
-        <img src="{{ . }}" class="page-item-image"></img>
+        <img src="{{ $baseUrl }}{{ . }}" class="page-item-image"></img>
     {{ end }}
     <div class="page-item-content">
         <header>

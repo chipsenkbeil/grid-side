@@ -1,18 +1,19 @@
-<video preload="auto" autoplay loop muted {{ with .Params.video_fallback }}poster="{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
+{{ $baseUrl := .Site.BaseURL }}
+<video preload="auto" autoplay loop muted {{ with .Params.video_fallback }}poster="{{ $baseUrl }}{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
     {{ with .Params.video_webm }}
-        <source src="{{ . }}" type='video/webm; codecs="vp8.0, vorbis"'>
+        <source src="{{ $baseUrl }}{{ . }}" type='video/webm; codecs="vp8.0, vorbis"'>
     {{ end }}
     {{ with .Params.video_ogv }}
-        <source src="{{ . }}" type='video/ogg; codecs="theora, vorbis"'>
+        <source src="{{ $baseUrl }}{{ . }}" type='video/ogg; codecs="theora, vorbis"'>
     {{ end }}
     {{ with .Params.video_mp4 }}
-        <source src="{{ . }}" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
+        <source src="{{ $baseUrl }}{{ . }}" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'>
     {{ end }}
     {{ with .Params.video_3gp }}
-        <source src="{{ . }}" type='video/3gp'>
+        <source src="{{ $baseUrl }}{{ . }}" type='video/3gp'>
     {{ end }}
     {{ with .Params.video_fallback }}
-        <img src="{{ . }}">
+        <img src="{{ $baseUrl }}{{ . }}">
     {{ end }}
 </video>
 

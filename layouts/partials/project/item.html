@@ -1,5 +1,5 @@
 
-{{ $url := $.Site.BaseURL }}
+{{ $baseUrl := $.Site.BaseURL }}
 {{ if isset .Params "image" }}
     {{ $.Scratch.Set "image" .Params.image }}
 {{ else }}
@@ -20,7 +20,7 @@
                             {{ .Scratch.Set "class" "rounded-corners-top fill-container-width" }}
                             {{ partial "extra/video.html" . }}
                         {{ else }}
-                            <img src="{{ $image }}" class="fill-container-width rounded-corners-top" />
+                            <img src="{{ $baseUrl }}{{ $image }}" class="fill-container-width rounded-corners-top" />
                         {{ end }}
                     </div>
                     <div class="rounded-corners-bottom center-text project-container-title">

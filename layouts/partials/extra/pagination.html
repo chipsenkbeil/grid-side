@@ -1,19 +1,20 @@
+{{ $baseUrl := .Site.BaseURL }}
 {{ if .IsNode }}
     <ul class="pagination">
         {{ with .Paginator }}
             <li class="{{ if .HasPrev }}waves-effect{{ else }}disabled{{ end }}">
-                <a href="{{ if .HasPrev }}{{ .Prev.URL }}{{ else }}#!{{ end }}">
+                <a href="{{ if .HasPrev }}{{ $baseUrl }}{{ .Prev.URL }}{{ else }}#!{{ end }}">
                     <i class="fa fa-angle-left"></i>
                 </a>
             </li>
             {{ $currentPageNumber := .PageNumber }}
             {{ range .Pagers }}
                 <li class="{{ if eq $currentPageNumber .PageNumber }}active{{ else }}waves-effect{{ end }}">
-                    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+                    <a href="{{ $baseUrl }}{{ .URL }}">{{ .PageNumber }}</a>
                 </li>
             {{ end }}
             <li class="{{ if .HasNext }}waves-effect{{ else }}disabled{{ end }}">
-                <a href="{{ if .HasNext }}{{ .Next.URL }}{{ else }}#!{{ end }}">
+                <a href="{{ if .HasNext }}{{ $baseUrl }}{{ .Next.URL }}{{ else }}#!{{ end }}">
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>

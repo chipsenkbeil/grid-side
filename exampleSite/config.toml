@@ -1,4 +1,4 @@
-# Site settings
+# Site settings (baseurl must end with a trailing slash!)
 baseurl = "http://replace-this-with-your-hugo-site.com/"
 languageCode = "en-us"
 title = "Grid Side"

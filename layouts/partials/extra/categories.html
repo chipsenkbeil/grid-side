@@ -1,9 +1,10 @@
+{{ $baseUrl := .Site.BaseURL }}
 <ul class="categories">
     <li>
         <i class="fa fa-book"></i>
     </li>
     {{ range .Params.categories }}
-        <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+        <li><a href="{{ $baseUrl }}categories/{{ . | urlize }}">{{ . }}</a></li>
     {{ end }}
 </ul>
 
