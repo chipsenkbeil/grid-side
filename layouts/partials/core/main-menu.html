@@ -1,7 +1,8 @@
 
+{{ $baseUrl := .Site.BaseURL }}
 <nav class="main-menu menu-colors">
     <ul class="menu menu-colors no-list-float">
-        <li><a href="{{ .Site.BaseURL }}"><i class="fa fa-home fa-2x"></i></a></li>
+        <li><a href="{{ $baseUrl }}"><i class="fa fa-home fa-2x"></i></a></li>
         <li>
             <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
 
@@ -20,12 +21,12 @@
                         <ul class="menu flexible-width menu-colors no-list-float">
                             {{ range .Children }}
                                 <li {{ if $currentNode.IsMenuCurrent "Main" . }} class="active" {{ end }}>
-                                    <a href="{{ .URL }}">{{ .Name }}</a>
+                                    <a href="{{ $baseUrl }}{{ .URL }}">{{ .Name }}</a>
                                 </li>
                             {{ end }}
                         </ul>
                     {{ else }}
-                        <a href="{{ .URL }}">
+                        <a href="{{ $baseUrl }}{{ .URL }}">
                             {{ .Pre }}
                             <span>{{ .Name }}</span>
                         </a>
