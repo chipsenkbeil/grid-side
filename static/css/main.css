@@ -147,7 +147,7 @@ ul.menu li:hover > ul {
 
 ul.menu li {
     float: left;
-  
+
     /* Needed */
     position: relative;
 }
@@ -399,14 +399,14 @@ html, body {
 
 .clearfix:before,
 .clearfix:after {
-    content: ".";    
-    display: block;    
-    height: 0;    
-    overflow: hidden; 
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
 }
 
-.clearfix:after { 
-    clear: both; 
+.clearfix:after {
+    clear: both;
 }
 
 .clearfix {
@@ -587,7 +587,7 @@ ul.tags li a:hover {
     align-items: center;
 
     text-align: center;
-    
+
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -779,3 +779,6 @@ ul.pagination {
     }
 }
 
+img {
+  max-width: 100%;
+}
