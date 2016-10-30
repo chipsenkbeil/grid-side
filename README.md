@@ -11,7 +11,6 @@ _project_ for various rendering.
 
 - Current Materialize version is `0.97.0`.
 - Current Font Awesome version is `4.4.0`.
-- Current SideComments.js version is `0.0.3`.
 - Current Masonry.js version is `3.3.1`.
 - Current imagesLoaded.js version is `3.1.8`.
 - Current Modernizr.js version is `2.8.3`.
