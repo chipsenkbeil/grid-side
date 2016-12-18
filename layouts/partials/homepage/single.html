@@ -5,7 +5,7 @@
 {{ $baseUrl := .Site.BaseURL }}
 <body class="page-colors">
     <div class="parallax">
-        {{ with .Site.Params.Header }}
+        {{ with .Site.Params.header }}
             <!-- NOTE: Must be at root level for firefox to work (cannot wrap in header) -->
             <div class="parallax__group">
                 <div class="parallax__layer parallax__layer--base">
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="flex-container">
-                    {{ range .Site.Params.Cells.List }}
+                    {{ range .Site.Params.cells.list }}
                         <!-- 
                              Note: The link and contents must be here since we 
                              cannot pass .Site.BaseURL as part of the context 
@@ -78,7 +78,7 @@
                     {{ end }}
                 </div>
 
-                {{ with .Site.Params.Footer }}
+                {{ with .Site.Params.footer }}
                     <div class="row-colors right-align">
                         <ul class="main-page-footer horizontal no-bullets no-margin">
                             {{ range .List }}
