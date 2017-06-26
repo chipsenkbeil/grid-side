@@ -9,7 +9,7 @@
       <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
     {{ .Hugo.Generator }}
-    <meta name="generation-date" content="{{ .Now }}">
+    <meta name="generation-date" content="{{ now }}">
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
