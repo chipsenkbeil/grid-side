@@ -3,9 +3,9 @@ license = "MIT"
 licenselink = "https://github.com/chipsenkbeil/grid-side/blob/master/LICENSE.md"
 description = "Personal portfolio, blog, and gallery for use by the Hugo generator."
 homepage = "https://github.com/chipsenkbeil/grid-side"
-tags = ["blog", "portfolio", "projects"]
+tags = ["blog", "portfolio", "projects", "gallery"]
 features = ["blog", "portfolio", "gallery"]
-min_version = 0.14
+min_version = 0.21
 
 [author]
     name = "Chip Senkbeil"
