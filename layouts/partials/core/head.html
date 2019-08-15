@@ -2,21 +2,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="{{ with .Site.Params.name }}{{ . }}{{ end }}">
-    <meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}">
+    <meta name="author" content="Miss Cody">
+    <meta name="description" content="Miss Cody is Austin's Premier Architecture, Commercial, and Portrait Photo Retoucher. Over 10 years experience, currently accepting new clients.">
+    <meta name="keywords" content="austin retoucher, miss cody photos, architecture retoucher, austin architecture retoucher" />
     {{ if .RSSLink }}
       <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
       <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
     {{ .Hugo.Generator }}
     <meta name="generation-date" content="{{ now }}">
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <title>{{ .Title }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     {{ partial "core/css.html" . }}
     <script src="{{ .Site.BaseURL }}js/modernizr-latest.js"></script>
     <script src="{{ .Site.BaseURL }}js/lazysizes.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/ls.noscript.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700&display=swap" rel="stylesheet">
 
     <script>
         window.lazySizesConfig = window.lazySizesConfig || {};
@@ -34,4 +36,5 @@
         </script> 
     {{ end }}
 </head>
+
 
