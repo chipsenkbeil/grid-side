@@ -5,11 +5,7 @@
     {{ partial "core/main-menu.html" . }}
 
     <section class="main-content">
-        {{ .Content }}
-<br>
-        <div id="form-style">       {{ partial "contactform.html" . }}
-   </div>
-
+        {{ partial "gallery/item" . }}
     </section>
 
     {{ partial "core/js.html" . }}

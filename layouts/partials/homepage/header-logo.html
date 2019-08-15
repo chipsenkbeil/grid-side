@@ -7,11 +7,11 @@
         margin: 0 auto;
     ">
         {{ with .name }}<h2>{{ . }}</h2>{{ end }}
-        {{ with .email }}<h5>{{ . }}</h5>{{ end }}
-        {{ with .description }}
+        {{ with .description }}<h5> {{ . }}</h5>{{ end }}
+        {{ with .email }}<h6>{{ . }}</h6>{{ end }}
+        
             <h2><hr></h2>
-            <h5>{{ . }}</h5>
-        {{ end }}
+<a href="/contact"><button class="page-item-btn"> Request Quote</button></a>
     </span>
 </div>
 

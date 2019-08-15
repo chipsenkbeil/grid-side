@@ -1,0 +1,25 @@
+{{ $sp := .Site.Params }}
+{{ if and (isset $sp "Gallery") (isset $sp.Gallery "infinite_scroll") }}
+    {{ with $sp.Gallery.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ end }}
+{{ else }}
+    {{ $.Scratch.Set "infinite_scroll" false }}
+{{ end }}
+
+{{ if eq ($.Scratch.Get "infinite_scroll") false }}
+    {{ with $sp.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ else }}
+        {{ $.Scratch.Set "infinite_scroll" false }}
+    {{ end }}
+{{ end }}
+
+{{ $infinite_scroll := $.Scratch.Get "infinite_scroll" }}
+
+<div class="masonry-flex-container {{ if $infinite_scroll }}infinite-scroll{{ end }}">
+    {{ range .Paginator.Pages }}
+        {{ partial "gallery/item.html" . }}
+    {{ end }}
+</div>
+
